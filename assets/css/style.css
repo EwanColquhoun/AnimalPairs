@@ -1,5 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none; 
+ }
+
+html, body {
+    background-image: linear-gradient(to bottom, #45a4f3, #4bb5f0, #66c5ea, #88d2e5, #abdee3, #addadb, #b0d7d4, #b2d3ce, #95c0ba, #77aea7, #589b94, #368981);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #D9ECE9;
+    height: 100vh;
+    width: auto;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px;
+    font-size: 100px;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+#game-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#deck-info-holder {
+    margin: 0 auto;
+    height: 50px;
+    width: 100%;
+    border: 1px solid black;
+    display: inline-flex;
+    align-items: flex-end;
+}
+
+.info-holder {
+    width: 33%;
+    border: 1px solid red;
+    text-align: center;
+}
+
+.deck {
+    width: 600px;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 8px 9px 26px 0 rgb(46 61 73 / 50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    list-style-type: none;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    margin: 0.2rem 0.2rem;
+    background: #141214;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Dropdown button inspiration from https://www.w3schools.com/css/css_dropdowns.asp */
 /* Style The Dropdown Button */
+
+
 .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -19,12 +103,12 @@
   .dropdown-content {
     display: none;
     position: absolute;
+    right: 58px;
     background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 131px;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
     z-index: 1;
   }
-  
   /* Links inside the dropdown */
   .dropdown-content a {
     color: black;
@@ -45,3 +129,22 @@
   .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
+
+#reset-game {
+    font-size: 300%;
+    margin-top: 20px;
+}
+
+#reset-game > i {
+    background: transparent;
+}
+
+
+footer {
+    height: 30px;
+    width: 100vw;
+    position: absolute;
+    bottom: 0%;
+    text-align: center;
+    line-height: 2em;
+}

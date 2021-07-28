@@ -10,26 +10,52 @@
 </head>
 <body>
     <h1>Animal Pairs</h1>
-    <div>
-        <span id="score">0</span>
-        <span id="timer">0 min 5 seconds</span>
-        <button id="reset-game">RESET</button>
-    </div>
 
-    <div id="difficulty-dropdown" class="dropdown">
-        <button class="dropbtn">Difficulty</button>
-        <div class="dropdown-content">
-          <a id="easy" href="#">Easy</a>
-          <a id="medium" href="#">Medium</a>
-          <a id="hard" href="#">Hard</a>
+    <div id="game-holder">
+    
+        <div id="deck-info-holder">
+            <div class="info-holder"><span id="score">SCORE</span></div>
+            <div class="info-holder"><span id="timer">0 min 5 seconds</span></div>
+
+            <div id="difficulty-dropdown" class="dropdown info-holder">
+                <button class="dropbtn">Difficulty</button>
+                <div class="dropdown-content">
+                    <a id="diff-easy" href="#">Easy</a>
+                    <a id="diff-medium" href="#">Medium</a>
+                    <a id="diff-hard" href="#">Hard</a>
+                </div>
+            </div>
         </div>
-      </div>
 
-    <ul id="deck"></ul>
+            <ul id="deck" class="deck">
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+            </ul>
+
+        <div class="info-holder"><button id="reset-game"><i class="fas fa-undo"></i></button>
+        </div>
+
+    </div>
 
     <footer>
         <p>Copyright 2021 Ewan Colquhoun</p>
     </footer>
+
+    <script src="https://kit.fontawesome.com/48b20a3378.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
