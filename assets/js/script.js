@@ -1,13 +1,11 @@
 
-
 document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName("button");
-        
+    let buttons = document.getElementsByTagName("button");    
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("id") === "reset-game") {
                 resetGame();
-            } else if (this.getAttribute("class") === "dropbtn") {
+            } else if (this.getAttribute("class") === "diff-btn") {
                 changeDifficulty();
             } else {
                 alert("Error! Button function not known.");
@@ -30,8 +28,25 @@ function increaseScore() {}
 function changeScoreColor() {}
 
 function changeDifficulty() {
-    console.log("Change Difficulty");
+    let buttons = document.getElementsByClassName("diff-btn");
+    let diffButton = "";
+
+    for (let button of buttons) {
+        let diffButton = button.id;
+
+        if (diffButton == "diff-easy"){
+            console.log("easy button");
+            
+        } else if (diffButton == "diff-medium"){
+            console.log("medium button");
+            
+        } else if (diffButton == "diff-hard"){
+            console.log("hard button");
+            
+        }
+    }
 }
+
 
 function resetGame() {
     resetTimer();
