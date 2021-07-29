@@ -89,18 +89,20 @@ h1 {
 }
 
 .card img {
-  display:none;
-  width: 125px;
+    display:none;
+    width: 125px;
 }
 
-.card.show img {display:block;}
+.card.show img {
+    display:block;
+}
 
-.card.match img {display:block;}
+.card.match img {
+    display:block;
+}
 
 /* Dropdown button inspiration from https://www.w3schools.com/css/css_dropdowns.asp */
 /* Style The Dropdown Button */
-
-
 .dropbtn {
     background-color: #B04571;
     color: white;

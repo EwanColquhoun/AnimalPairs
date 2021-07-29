@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         })
     }
-    startGame()
+    startGame();
 })
 
 function startGame() {
-    add();
+    addTime();
 }
 
 function mixCards() {}
@@ -34,20 +34,21 @@ function changeDifficulty() {
 }
 
 function resetGame() {
-    console.log("Function works");
+    resetTimer();
+    console.log("reset");
 }
 
 function congratsMessage() {}
 
-
-let timerSpan = document.getElementById("timer"),
+/* Timer variables */
+var timerSpan = document.getElementById("timer"),
     start = document.getElementById('start'),
     stop = document.getElementById('stop'),
     clear = document.getElementById('clear'),
     seconds = 0, minutes = 0,
     t;
 
-function add() {
+function addTime() {
     seconds++;
     if (seconds >= 60) {
         seconds = 0;
@@ -58,22 +59,27 @@ function add() {
     timer();
 }
 
-function timer() {
-    t = setTimeout(add, 1000);
+function stopTimer() {
+    clearTimeout(t);
 }
-timer();
 
+function resetTimer() {
+    seconds = 0;
+    minutes = 0;
+    timerSpan.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + " Minutes " + (seconds > 9 ? seconds : "0" + seconds) + " Seconds";
+}
 
-/* Start button */
-start.onload = timer();
+function timer() {
+    t = setTimeout(addTime, 1000);
+}
 
-/* Stop button */
+/* Stop button 
 stop.onclick = function() {
     clearTimeout(t);
 }
 
-/* Clear button */
+/* Clear button 
 clear.onclick = function() {
     timerSpan.textContent = "0 Minutes 0 Seconds";
     seconds = 0; minutes = 0;
-}
+}*/
