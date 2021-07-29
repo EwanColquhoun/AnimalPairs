@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital@1&family=Fredericka+the+Great&display=swap');
 
 * {
     margin: 0;
@@ -13,12 +13,20 @@ html, body {
     background-color: #D9ECE9;
     height: 100vh;
     width: auto;
+    font-family: 'Exo', sans-serif;
 }
 
 *,
 *::before,
 *::after {
 	box-sizing: inherit;
+}
+
+#myModal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(69, 164, 243, 0.5);
 }
 
 h1 {
@@ -41,22 +49,21 @@ h1 {
     margin: 0 auto;
     height: 50px;
     width: 100%;
-    border: 1px solid black;
     display: inline-flex;
     align-items: flex-end;
 }
 
 .info-holder {
     width: 33%;
-    border: 1px solid red;
     text-align: center;
+    font-size: larger;
 }
 
 .deck {
     width: 600px;
     padding: 1rem;
     border-radius: 4px;
-    box-shadow: 8px 9px 26px 0 rgb(46 61 73 / 50%);
+    /*box-shadow: 8px 9px 26px 0 rgb(46 61 73 / 50%);*/
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -69,7 +76,7 @@ h1 {
 .deck .card {
     height: 125px;
     width: 125px;
-    margin: 0.2rem 0.2rem;
+    margin: 1.2rem 0.2rem;
     background: #141214;
     font-size: 0;
     color: #ffffff;
@@ -78,19 +85,32 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    contain: content;
 }
+
+.card img {
+  display:none;
+  width: 125px;
+}
+
+.card.show img {display:block;}
+
+.card.match img {display:block;}
 
 /* Dropdown button inspiration from https://www.w3schools.com/css/css_dropdowns.asp */
 /* Style The Dropdown Button */
 
 
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #B04571;
     color: white;
-    padding: 16px;
-    font-size: 16px;
+    padding: 5px;
+    margin-left: 30px;
+    font-size: 25px;
     border: none;
     cursor: pointer;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    font-family: inherit;
   }
   
   /* The container <div> - needed to position the dropdown content */
@@ -118,7 +138,7 @@ h1 {
   }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #f1f1f1}
+  .dropdown-content a:hover {background-color: #e7c8c8}
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
@@ -132,13 +152,10 @@ h1 {
 
 #reset-game {
     font-size: 300%;
-    margin-top: 20px;
+    background-color: transparent;
+    animation: jello;
+    animation-duration: 3s;
 }
-
-#reset-game > i {
-    background: transparent;
-}
-
 
 footer {
     height: 30px;

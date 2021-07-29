@@ -7,8 +7,21 @@
     <title>Animal Pairs</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <!--Link to AnimateCSS library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 </head>
 <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+    
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&plus;</span>
+        <p></p>
+      </div>
+    
+    </div>
     <h1>Animal Pairs</h1>
 
     <div id="game-holder">
@@ -28,25 +41,26 @@
         </div>
 
             <ul id="deck" class="deck">
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
+                <li class="card show"><img src="assets/images/cow.jpg" alt="Cow image"></li>
+                <li class="card"><img src="assets/images/dog.jpg" alt="Dog image"></li>
+                <li class="card"><img src="assets/images/eagle.jpg" alt="Eagle image"></li>
+                <li class="card"><img src="assets/images/gecko.jpg" alt="Gecko image"></li>
+                <li class="card"><img src="assets/images/kingfisher.jpg" alt="Kingfisher image"></li>
+                <li class="card show"><img src="assets/images/panda.jpg" alt="Panda image"></li>
+                <li class="card"><img src="assets/images/tiger.jpg" alt="Tiger image"></li>
+                <li class="card"><img src="assets/images/zebra.jpg" alt="Zebra image"></li>
+                <li class="card"><img src="assets/images/cow.jpg" alt="Cow image"></li>
+                <li class="card"><img src="assets/images/dog.jpg" alt="Dog image"></li>
+                <li class="card"><img src="assets/images/eagle.jpg" alt="Eagle image"></li>
+                <li class="card"><img src="assets/images/gecko.jpg" alt="Gecko image"></li>
+                <li class="card"><img src="assets/images/kingfisher.jpg" alt="Kingfisher image"></li>
+                <li class="card"><img src="assets/images/panda.jpg" alt="Panda image"></li>
+                <li class="card"><img src="assets/images/tiger.jpg" alt="Tiger image"></li>
+                <li class="card"><img src="assets/images/zebra.jpg" alt="Zebra image"></li>
             </ul>
 
-        <div class="info-holder"><button id="reset-game"><i class="fas fa-undo"></i></button>
+        <div>
+            <button id="reset-game"><i class="fas fa-undo"></i></button>
         </div>
 
     </div>
