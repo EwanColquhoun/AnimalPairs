@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", startGame);
 
 function startGame() {
     addTime();
+    showEasy();
 }
 
 const diffButtons = document.getElementsByClassName("diff-btn");
