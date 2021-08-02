@@ -46,11 +46,12 @@ h1 {
 }
 
 #deck-info-holder {
-    margin: 0 auto;
-    height: 50px;
-    width: 100%;
-    display: inline-flex;
-    align-items: flex-end;
+  margin: 0 auto;
+  height: 50px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .info-holder {
@@ -125,7 +126,7 @@ h1 {
   .dropdown-content {
     display: none;
     position: absolute;
-    right: 58px;
+    right: 150px;
     background-color: #f9f9f9;
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
