@@ -1,23 +1,35 @@
 
 document.addEventListener("DOMContentLoaded", startGame);
 
-
-function startGame() {
-    addTime();
-    showEasy();
-}
-
 const diffButtons = document.getElementsByClassName("diff-btn");
 
 for (let i = 0; i < diffButtons.length; i++) {
     diffButtons[i].addEventListener("click", changeDifficulty); // Add an onclick to select the level
 }
 
+let unmatchedCards = ['cow', 'dog', 'panda', 'kingfisher', 'gecko', 'eagle', 'tiger', 'zebra'];
+
+let possibleCards = [...unmatchedCards, ...unmatchedCards]; // duplicate array items to make pairs
+
+
+const cards = possibleCards.length;
 const easyClass = document.getElementsByClassName("easy");
 const mediumClass = document.getElementsByClassName("medium");
 const hardClass = document.getElementsByClassName("hard");
 const hardLevel = [...mediumClass, ...hardClass, ...easyClass];
 let deck = document.getElementById("deck");
+
+
+function startGame() {
+    addTime();
+    showEasy();
+    document.querySelector(".deck").innerHTML = '';
+    shuffle(possibleCards);
+    for(let i = 0; i < cards; i++){
+        document.querySelector(".deck").innerHTML += '<li class="card easy show"><img src="assets/images/${possibleCards[i]}.jpg" alt="Cow image"></li>'
+    }
+}
+
 
 function showEasy(){
     for (let i = 0; i < mediumClass.length; i++){
@@ -69,6 +81,26 @@ const resetBtn = document.getElementById("reset-game").addEventListener('click',
 function resetGame() {
     resetTimer();
     console.log("reset");
+}
+
+
+// ============================================
+// Shuffle
+// source: http://stackoverflow.com/a/2450976
+// ============================================
+
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
 }
 
 function mixCards() {}
