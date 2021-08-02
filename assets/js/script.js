@@ -7,29 +7,31 @@ for (let i = 0; i < diffButtons.length; i++) {
     diffButtons[i].addEventListener("click", changeDifficulty); // Add an onclick to select the level
 }
 
-let unmatchedCards = ['cow', 'dog', 'panda', 'kingfisher', 'gecko', 'eagle', 'tiger', 'zebra'];
 
-let possibleCards = [...unmatchedCards, ...unmatchedCards]; // duplicate array items to make pairs
-
-
-const cards = possibleCards.length;
 const easyClass = document.getElementsByClassName("easy");
 const mediumClass = document.getElementsByClassName("medium");
 const hardClass = document.getElementsByClassName("hard");
 const hardLevel = [...mediumClass, ...hardClass, ...easyClass];
-let deck = document.getElementById("deck");
+const deck = document.getElementById("deck");
+let animalCards = document.getElementsByClassName("card");
+var imagesList;
+var imagesAry = [];
+
+for (let i=0; i<animalCards.length; i++){
+    imagesList = animalCards[i].innerHTML;
+    imagesAry = imagesList.split(">", 30);
+    console.log(imagesAry);
+}
 
 
 function startGame() {
+    document.querySelector('.card').innerHTML = '';
     addTime();
     showEasy();
-    document.querySelector(".deck").innerHTML = '';
-    shuffle(possibleCards);
-    for(let i = 0; i < cards; i++){
-        document.querySelector(".deck").innerHTML += '<li class="card easy show"><img src="assets/images/${possibleCards[i]}.jpg" alt="Cow image"></li>'
-    }
+    shuffle(imagesList);
+    document.querySelector('.card').innerHTML = imagesList;
+    
 }
-
 
 function showEasy(){
     for (let i = 0; i < mediumClass.length; i++){
