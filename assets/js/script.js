@@ -14,24 +14,68 @@ const hardClass = document.getElementsByClassName("hard");
 const hardLevel = [...mediumClass, ...hardClass, ...easyClass];
 const deck = document.getElementById("deck");
 let animalCards = document.getElementsByClassName("card");
-var imagesList;
-var imagesAry = [];
 
-for (let i=0; i<animalCards.length; i++){
-    imagesList = animalCards[i].innerHTML;
-    imagesAry = imagesList.split(">", 30);
-    console.log(imagesAry);
+const cards = ['cow', 'dog', 'gecko', 'kingfisher', 'giraffe', 'lion', 'panda', 'eagle', 'tiger', 'zebra', ]
+const animalPairs = [...cards, ...cards];
+
+/*
+let myAnimals = document.getElementById("deck");
+for (let i=0; i<myAnimals.children.length; i++){
+    animalsArray.push(myAnimals.children[i].innerHTML);
+}
+console.log(animalsArray)
+*/
+// const images = document.querySelectorAll('#deck img');
+// for (let i = 0; i < images.length; i++) {
+//     images[i].src = i;
+//     console.log(images[i]);
+//     }
+
+function shuffleCards() {
+    // select #deck img
+    let images = document.querySelectorAll('#deck img');
+
+    // shuffle animalPairs array
+    shuffle(animalPairs);
+
+    // iterate over all images    
+    for (let i = 0; i < images.length; i++) {
+        // apply a src to the img
+        images[i].src = `assets/images/${animalPairs[i]}.jpg`;
+        // apply a data attribute that is the same as the index in the animalPairs array
+        images[i].dataset.ref = i;
+        // attach a click event listener to the image
+        images[i].addEventListener('click', event=> handleClick(event));
+    };
 }
 
+function handleClick(event){
+    console.log(event);
+    const ref = event.target.dataset.ref;
+    console.log(ref)
+}
+//TODO LIST
+//Get the click to recognise the matching data sets and check for correct answer.
+//Find a way to show matching 
 
 function startGame() {
-    document.querySelector('.card').innerHTML = '';
-    addTime();
+
+    resetTimer();
     showEasy();
-    shuffle(imagesList);
-    document.querySelector('.card').innerHTML = imagesList;
-    
+    shuffleCards();
+
+    // document.getElementById("deck").children.innerHTML = ``;
+    // console.log(document.getElementById("deck").children.innerHTML);
+
+    // shuffle(animalPairs);
+
+    // for (x=0; x<animalPairs.length; x++){
+    //     for (let i = 0; i < images.length; i++) {
+    //         images[i].src = `assets/images/${animalPairs[i]}.jpg`;
+    //         }
+    // }
 }
+
 
 function showEasy(){
     for (let i = 0; i < mediumClass.length; i++){
@@ -82,6 +126,7 @@ const resetBtn = document.getElementById("reset-game").addEventListener('click',
 
 function resetGame() {
     resetTimer();
+    startGame();
     console.log("reset");
 }
 
