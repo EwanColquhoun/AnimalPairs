@@ -61,7 +61,7 @@ function handleClick(event){
 function startGame() {
 
     resetTimer();
-    showEasy();
+    addTime();
     shuffleCards();
 
     // document.getElementById("deck").children.innerHTML = ``;
@@ -172,6 +172,7 @@ var timerSpan = document.getElementById("timer"),
     t;
 
 function addTime() {
+    clearTimeout(t);
     seconds++;
     if (seconds >= 60) {
         seconds = 0;
