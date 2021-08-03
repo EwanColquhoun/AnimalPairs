@@ -13,10 +13,15 @@ const mediumClass = document.getElementsByClassName("medium");
 const hardClass = document.getElementsByClassName("hard");
 const hardLevel = [...mediumClass, ...hardClass, ...easyClass];
 const deck = document.getElementById("deck");
+
 let animalCards = document.getElementsByClassName("card");
 
 const cards = ['cow', 'dog', 'gecko', 'kingfisher', 'giraffe', 'lion', 'panda', 'eagle', 'tiger', 'zebra', ]
 const animalPairs = [...cards, ...cards];
+var openedCards = [];
+
+const maxPairs = cards.length;
+let numMatch = 0
 
 /*
 let myAnimals = document.getElementById("deck");
@@ -43,16 +48,21 @@ function shuffleCards() {
         // apply a src to the img
         images[i].src = `assets/images/${animalPairs[i]}.jpg`;
         // apply a data attribute that is the same as the index in the animalPairs array
-        images[i].dataset.ref = i;
+        images[i].dataset.ref = animalPairs[i];
         // attach a click event listener to the image
-        images[i].addEventListener('click', event=> handleClick(event));
+        images[i].addEventListener('click', event => handleClick(event));
     };
+
+    let cards = document.querySelector('#deck li')
+    cards.addEventListener('click', event => handleClick(event));
 }
 
 function handleClick(event){
-    console.log(event);
+    
     const ref = event.target.dataset.ref;
-    console.log(ref)
+    openedCards.push(ref);
+    console.log(openedCards);
+    checkMatch();
 }
 //TODO LIST
 //Get the click to recognise the matching data sets and check for correct answer.
@@ -60,9 +70,16 @@ function handleClick(event){
 
 function startGame() {
 
+    numMatch = 0
     resetTimer();
     addTime();
     shuffleCards();
+
+    //if total pairs = maximum game ends and modal with congrats pops up
+    if(numMatch === maxPairs) {
+        stopTimer();
+        wellDone();
+    }
 
     // document.getElementById("deck").children.innerHTML = ``;
     // console.log(document.getElementById("deck").children.innerHTML);
@@ -76,6 +93,39 @@ function startGame() {
     // }
 }
 
+function wellDone() {
+    //function to show times and score in a modal on the completion of the game
+}
+
+function checkMatch() {
+    /*
+    let li = document.querySelector('#deck li');
+    for (let c=0; c<li.length; c++){
+        var classes = li[c];
+        console.log(classes);
+    }
+    */
+
+    if (openedCards[0] === openedCards[1]) {
+            match();
+    } else {
+        unMatched();
+        console.log(openedCards)
+    }
+}
+
+function match() {
+    console.log('matched');
+    document.querySelectorAll('.card').forEach((matched) => {
+        matched.classList.add('match');
+        matched.classList.remove('show');
+    });
+    openedCards = [];
+}
+
+function unMatched() {
+    console.log('unmatched');
+}
 
 function showEasy(){
     for (let i = 0; i < mediumClass.length; i++){

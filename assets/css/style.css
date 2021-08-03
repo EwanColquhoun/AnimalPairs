@@ -96,8 +96,13 @@ h1 {
     display:block;
 }
 
+/*TESTING DISPLAY NONE should be block*/
 .card.match img {
-    display:block;
+    display:none;
+}
+
+.card.hide img {
+  display: none;
 }
 
 /* Dropdown button inspiration from https://www.w3schools.com/css/css_dropdowns.asp */
