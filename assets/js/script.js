@@ -21,57 +21,16 @@ const animalPairs = [...cards, ...cards];
 var openedCards = [];
 const cardQuantity = animalPairs.length;
 const maxPairs = cards.length;
-let numMatch = 0
+let score = document.getElementById('score');
+let numMatch;
+let moves = 0;
 
-/*
-let myAnimals = document.getElementById("deck");
-for (let i=0; i<myAnimals.children.length; i++){
-    animalsArray.push(myAnimals.children[i].innerHTML);
-}
-console.log(animalsArray)
 
-// const images = document.querySelectorAll('#deck img');
-// for (let i = 0; i < images.length; i++) {
-//     images[i].src = i;
-//     console.log(images[i]);
-//     }
-
-function shuffleCards() {
-    // select #deck img
-    let images = document.querySelectorAll('#deck img');
-
-    // shuffle animalPairs array
-    shuffle(animalPairs);
-
-    // iterate over all images    
-    for (let i = 0; i < images.length; i++) {
-        // apply a src to the img
-        images[i].src = `assets/images/${animalPairs[i]}.jpg`;
-        // apply a data attribute that is the same as the index in the animalPairs array
-        images[i].dataset.ref = animalPairs[i];
-        // attach a click event listener to the image
-        images[i].addEventListener('click', event => handleClick(event));
-    };
-}
-
-function beginGame() {
-      //gives the unopenedcards a click
-      document.querySelectorAll(".card").forEach((card) => {
-        card.addEventListener("click", event => handleClick(event));
-
-        if (card.classList.contains('show')){
-            return;
-        }
-
-        card.classList.add('show', 'flipInY', 'animated');
-}
-*/
 
 function handleClick(){
     
     document.querySelectorAll(".card").forEach((card) => {
         card.addEventListener("click", function(){
-
         if (card.classList.contains('show')){
                 return;
         }
@@ -96,7 +55,8 @@ function handleClick(){
 
 function startGame() {
     document.querySelector('#deck').innerHTML = '';
-    numMatch = 0
+    numMatch = 0;
+    moves = 0;
     resetTimer();
     addTime();
     shuffle(animalPairs);
@@ -106,7 +66,7 @@ function startGame() {
     };
 
     handleClick();
-    
+    score.innerHTML = `Pairs ${numMatch}/${maxPairs}` 
 };
 
 function stopGame() {
@@ -123,27 +83,24 @@ function congratsMessage() {
 
         `
         <h2>Congratulations!</h2>
-        <h3>You completed the game in <span>${timerSpan.textContent}.<br><i class="fas fa-thumbs-up"></i></span></h3>
+        <h3>You completed the game in <span>${timerSpan.textContent}.<br>
+        <h3>Your score was ${numMatch}/${maxPairs}</h3><br><i class="fas fa-thumbs-up"></i></span></h3>
 
         `;
 
     let closeButton = document.querySelector('#close-modal');
     closeButton.addEventListener('click', function() {
         document.getElementById('myModal').style.display = 'none';
+        startGame();
         })
 
 }
 
-function closeModal() {
-    document.querySelector('close-modal').addEventListener('click', function() {
-        document.getElementById('myModal').style.display = 'none';
-    })
-    startGame();;
-}
-
 function match() {
+    moves++
     numMatch++;
     openedCards = [];
+    increaseScore();
   
     document.querySelectorAll(".show").forEach((matchedCard) => {
       matchedCard.classList.add('match','animated','flipInX')
@@ -154,14 +111,15 @@ function match() {
   
 
 function unMatched() {
+    moves++
     openedCards = [];
   
     document.querySelectorAll(".show:not(.match)").forEach((unmatchedCard) => {
-      unmatchedCard.classList = 'card show unmatch animated flipInY';
+      unmatchedCard.classList = 'card show unmatch animated shake';
       document.querySelectorAll('.unmatch').forEach((unmatchedCard) => {
         setTimeout(function() {
           unmatchedCard.classList = 'card';
-        }, 600);
+        }, 900);
       })
     });
   };
@@ -240,11 +198,20 @@ function shuffle(array) {
 }
 
 
-function increaseScore() {}
+function increaseScore() {
+        score.innerHTML = `Pairs ${numMatch}/${maxPairs}`    
+}
 
-function changeScoreColor() {}
+function changeScoreColor() {
 
-
+    if (moves <= 15){
+        score.innerHTML.style.color = 'green';
+    } else if (moves > 15 && moves < 25){
+      score.innerHTML.style.color = 'orange';
+    } else {
+       score.innerHTML.style.color = 'red';
+    }
+}
 
 
 

@@ -150,8 +150,9 @@ h1 {
 }
 
 .shake {
-  animation: shake;
-  animation-duration: 500ms;
+  animation: shakeX;
+  animation-duration: 1s;
+  animation-delay: 200ms;
 }
 
 /*TESTING DISPLAY NONE should be block*/
