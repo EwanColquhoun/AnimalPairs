@@ -89,6 +89,7 @@ function handleClick(){
                 unMatched();
             }
         };
+        stopGame();
         });
     });
 }
@@ -105,7 +106,6 @@ function startGame() {
     };
 
     handleClick();
-    stopGame();
     
 };
 
@@ -117,7 +117,15 @@ function stopGame() {
     }
 }
 
-function congratsMessage() {}
+function congratsMessage() {
+    document.getElementById('myModal').style.display = 'block';
+    document.querySelector('#congrats-div').innerHTML = 
+
+        `
+        <h2>Congratulations!</h2>
+        <h3>You completed the game in <span>${timerSpan.textContent}</span></h3>
+        `
+}
     
 function match() {
     numMatch++;
@@ -242,7 +250,7 @@ function addTime() {
         minutes++;
         }
     
-    timerSpan.innerHTML = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + " Minutes " + (seconds > 9 ? seconds : "0" + seconds) + " Seconds";
+    timerSpan.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + " Minutes " + (seconds > 9 ? seconds : "0" + seconds) + " Seconds";
     timer();
 }
 

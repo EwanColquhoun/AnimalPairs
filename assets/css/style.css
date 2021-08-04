@@ -21,10 +21,37 @@ html, body {
 }
 
 #myModal {
-  display: none;
+  display: block;
+  z-index: 1;
+  width: 70%;
+  height: 70%;
+  top: 20%;
+  left: 15%;
+  background-color: rgba(245, 33, 121, 0.9);
+  position: fixed;
+  transition: 1.0s;
+  border-radius: 25%;
+}
+
+.modalContent {
   width: 100%;
   height: 100%;
-  background-color: rgba(69, 164, 243, 0.5);
+  margin: 0 auto;
+}
+
+#congrats-div {
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  font-size: 2.5em;
+}
+
+#close-modal {
+  width: 50px;
+  height: 25px;
 }
 
 h1 {
