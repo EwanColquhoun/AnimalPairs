@@ -9,7 +9,8 @@
 html, body {
     background-image: linear-gradient(to bottom, #45a4f3, #4bb5f0, #66c5ea, #88d2e5, #abdee3, #addadb, #b0d7d4, #b2d3ce, #95c0ba, #77aea7, #589b94, #368981);
     background-color: #D9ECE9;
-    height: 100vh;
+    background-attachment: fixed;
+    height: auto;
     width: auto;
     font-family: 'Exo', sans-serif;
 }
@@ -40,13 +41,15 @@ html, body {
 }
 
 #congrats-div {
-  width: 50%;
+  width: 90%;
   height: 50%;
   margin: 0 auto;
   position: absolute;
-  top: 25%;
-  left: 25%;
-  font-size: 2.5em;
+  top: 10%;
+  left: 5%;
+  font-size: 2em;
+  text-align: center;
+  line-height: 2;
 }
 
 #congrats-div i {
@@ -56,9 +59,6 @@ html, body {
 #close-modal {
   width: 200px;
   height: 100px;
-  position: absolute;
-  bottom: 10%;
-  left: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,6 +67,13 @@ html, body {
   border-radius: 10px;
   box-shadow: 8px 9px 20px 0px;
   cursor: pointer;
+  animation: bounce 1.5s infinite;
+  margin: 680px auto;
+}
+
+#close-modal:hover {
+  background-color: darkviolet;
+  color: whitesmoke;
 }
 
 h1 {
@@ -140,18 +147,15 @@ h1 {
 }
 
 .flipInY {
-  animation: flipInY;
-  animation-duration: 500ms;
+  animation: flipInY 500ms;
 }
 
 .flipInX {
-  animation: flipInX;
-  animation-duration: 500ms;
+  animation: flipInX 500ms;
 }
 
 .shake {
-  animation: shakeX;
-  animation-duration: 1s;
+  animation: shakeX 1s;
   animation-delay: 200ms;
 }
 
@@ -220,15 +224,36 @@ h1 {
 #reset-game {
     font-size: 300%;
     background-color: transparent;
-    animation: jello;
-    animation-duration: 3s;
+    animation: pulse 1s infinite;
 }
 
 footer {
-    height: 30px;
-    width: 100vw;
-    position: absolute;
-    bottom: 0%;
-    text-align: center;
-    line-height: 2em;
+  height: 30px;
+  width: 100vw;
+  position: relative;
+  text-align: center;
+  line-height: 2em;
+  margin: 120px auto;
+}
+
+#social-media a {
+  color: black;
+  font-size: larger;
+  padding: 5px 15px;
+}
+
+@media (max-width: 600px) {
+  #myModal {
+    width: 100%;
+  }
+
+  .card img {
+    width:  80px;
+  }
+
+  .card {
+    width: 80px;
+    height: 80px;
+  }
+
 }

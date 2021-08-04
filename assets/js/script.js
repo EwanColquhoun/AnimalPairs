@@ -65,7 +65,7 @@ function startGame() {
         document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${animalPairs[a]}.jpg"/></li>`;
     };
 
-    handleClick();
+    handleClick(); 
     score.innerHTML = `Pairs ${numMatch}/${maxPairs}` 
 };
 
@@ -74,6 +74,7 @@ function stopGame() {
         console.log('welldone');
         stopTimer();
         congratsMessage();
+        changeScoreColor();
     }
 }
 
@@ -84,7 +85,7 @@ function congratsMessage() {
         `
         <h2>Congratulations!</h2>
         <h3>You completed the game in <span>${timerSpan.textContent}.<br>
-        <h3>Your score was ${numMatch}/${maxPairs}</h3><br><i class="fas fa-thumbs-up"></i></span></h3>
+        <h4><span id="result"></span></h4><br><i class="fas fa-thumbs-up"></i></span></h3>
 
         `;
 
@@ -203,13 +204,13 @@ function increaseScore() {
 }
 
 function changeScoreColor() {
-
+    let result = document.querySelector('#result');
     if (moves <= 15){
-        score.innerHTML.style.color = 'green';
+        result.innerHTML = 'Your result was EXCELLENT!';
     } else if (moves > 15 && moves < 25){
-      score.innerHTML.style.color = 'orange';
+      result.innerHTML = 'Well Done! Keep practicing to improve your score';
     } else {
-       score.innerHTML.style.color = 'red';
+       result.innerHTML = 'Good, but see if you can do it in less moves next time!';
     }
 }
 
