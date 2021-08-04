@@ -16,11 +16,17 @@ const deck = document.getElementById("deck");
 
 let animalCards = document.getElementsByClassName("card");
 
-const cards = ['cow', 'dog', 'gecko', 'kingfisher', 'giraffe', 'lion', 'panda', 'eagle', 'tiger', 'zebra', ]
-const animalPairs = [...cards, ...cards];
+const hardCards = ['cow', 'dog', 'gecko', 'kingfisher', 'giraffe', 'lion', 'panda', 'eagle', 'tiger', 'zebra'];
+const hardPairs = [...hardCards, ...hardCards];
+const mediumCards = ['cow', 'dog', 'gecko', 'kingfisher', 'giraffe', 'lion', 'panda', 'eagle'];
+const mediumPairs = [...mediumCards,...mediumCards];
+const easyCards = ['giraffe', 'lion', 'panda', 'eagle', 'tiger', 'zebra'];
+const easyPairs = [...easyCards,...easyCards];
+
+
 var openedCards = [];
-const cardQuantity = animalPairs.length;
-const maxPairs = cards.length;
+///const cardQuantity = animalPairs.length;
+const maxPairs = easyCards.length;
 let score = document.getElementById('score');
 let numMatch;
 let moves = 0;
@@ -54,18 +60,12 @@ function handleClick(){
 }
 
 function startGame() {
-    document.querySelector('#deck').innerHTML = '';
     numMatch = 0;
     moves = 0;
     resetTimer();
     addTime();
-    shuffle(animalPairs);
-
-    for (let a=0; a<cardQuantity; a++){
-        document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${animalPairs[a]}.jpg"/></li>`;
-    };
-
-    handleClick(); 
+    showEasy();
+    changeDifficulty();
     score.innerHTML = `Pairs ${numMatch}/${maxPairs}` 
 };
 
@@ -126,35 +126,34 @@ function unMatched() {
   };
 
 function showEasy(){
-    for (let i = 0; i < mediumClass.length; i++){
-        let mediumLi = mediumClass[i];
-        mediumLi.style.display = "none";
-    }
-    for (let i = 0; i < hardClass.length; i++){
-        let hardLi = hardClass[i];   
-        hardLi.style.display = "none" 
-    }
-    deck.style.width = "500px";
+    
+    document.querySelector('#deck').innerHTML = '';
+    document.querySelector('#game-holder').style.width = '680px';
+    shuffle(easyPairs);
+        for (let a=0; a<easyPairs.length; a++){
+            document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${easyPairs[a]}.jpg"/></li>`;
+    };
+    handleClick();
 }
 
 function showMedium(){
-    for (let i = 0; i < hardClass.length; i++){
-        let hardLi = hardClass[i];   
-        hardLi.style.display = "none"
-    }
-    for (let i = 0; i < mediumClass.length; i++){
-        let mediumLi = mediumClass[i];
-        mediumLi.style.display = "flex";
-    }
-    deck.style.width = "600px"
+    document.querySelector('#deck').innerHTML = '';
+    document.querySelector('#game-holder').style.width = '680px';
+    shuffle(mediumPairs);
+        for (let a=0; a<mediumPairs.length; a++){
+            document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${mediumPairs[a]}.jpg"/></li>`;
+    };
+    handleClick();
 }
 
 function showHard(){
-    for (let i = 0; i < hardLevel.length; i++){
-        let toughLi = hardLevel[i];
-        toughLi.style.display = "flex";
-    }
-    deck.style.width = "760px";
+    document.querySelector('#deck').innerHTML = '';
+    document.querySelector('#game-holder').style.width = '760px';
+    shuffle(hardPairs);
+        for (let a=0; a<hardPairs.length; a++){
+            document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${hardPairs[a]}.jpg"/></li>`;
+    };
+    handleClick();
 }
 
 
