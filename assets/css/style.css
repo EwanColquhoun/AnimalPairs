@@ -21,7 +21,7 @@ html, body {
 }
 
 #myModal {
-  display: block;
+  display: none;
   z-index: 1;
   width: 70%;
   height: 70%;
@@ -30,7 +30,7 @@ html, body {
   background-color: rgba(245, 33, 121, 0.9);
   position: fixed;
   transition: 1.0s;
-  border-radius: 25%;
+  border-radius: 100px;
 }
 
 .modalContent {
@@ -49,9 +49,24 @@ html, body {
   font-size: 2.5em;
 }
 
+#congrats-div i {
+  font-size: larger;
+}
+
 #close-modal {
-  width: 50px;
-  height: 25px;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  bottom: 10%;
+  left: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5em;
+  font-family: inherit;
+  border-radius: 10px;
+  box-shadow: 8px 9px 20px 0px;
+  cursor: pointer;
 }
 
 h1 {
@@ -100,18 +115,18 @@ h1 {
 }
 
 .card {
-    height: 125px;
-    width: 125px;
-    margin: 1.2rem 0.2rem;
-    background: rgba(255, 245, 255, 0.2);
-    font-size: 0;
-    color: #ffffff;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    contain: content;
+  height: 125px;
+  width: 125px;
+  margin: 1.2rem 0.2rem;
+  background: rgba(255, 245, 255, 0.5);
+  font-size: 0;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 20px 4px darkslategray;
 }
 
 .card img {
@@ -121,12 +136,23 @@ h1 {
 
 .card.show img {
     display:block;
+    border-radius: 5px;
 }
 
 .flipInY {
   animation: flipInY;
+  animation-duration: 500ms;
 }
 
+.flipInX {
+  animation: flipInX;
+  animation-duration: 500ms;
+}
+
+.shake {
+  animation: shake;
+  animation-duration: 500ms;
+}
 
 /*TESTING DISPLAY NONE should be block*/
 .card.match img {

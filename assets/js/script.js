@@ -76,7 +76,7 @@ function handleClick(){
                 return;
         }
             
-        card.classList.add('show', 'animate_animiated', 'animate_flipInY');
+        card.classList.add('show', 'animated', 'flipInY');
 
         let openCard = card.innerHTML;
         openedCards.push(openCard);
@@ -123,16 +123,30 @@ function congratsMessage() {
 
         `
         <h2>Congratulations!</h2>
-        <h3>You completed the game in <span>${timerSpan.textContent}</span></h3>
-        `
+        <h3>You completed the game in <span>${timerSpan.textContent}.<br><i class="fas fa-thumbs-up"></i></span></h3>
+
+        `;
+
+    let closeButton = document.querySelector('#close-modal');
+    closeButton.addEventListener('click', function() {
+        document.getElementById('myModal').style.display = 'none';
+        })
+
 }
-    
+
+function closeModal() {
+    document.querySelector('close-modal').addEventListener('click', function() {
+        document.getElementById('myModal').style.display = 'none';
+    })
+    startGame();;
+}
+
 function match() {
     numMatch++;
     openedCards = [];
   
     document.querySelectorAll(".show").forEach((matchedCard) => {
-      matchedCard.classList.add('match','animate_animated','animate_flip')
+      matchedCard.classList.add('match','animated','flipInX')
       matchedCard.classList.remove('show')
     });
   
@@ -143,10 +157,10 @@ function unMatched() {
     openedCards = [];
   
     document.querySelectorAll(".show:not(.match)").forEach((unmatchedCard) => {
-      unmatchedCard.classList = 'card show unmatch animate_animated animate_shake';
+      unmatchedCard.classList = 'card show unmatch animated flipInY';
       document.querySelectorAll('.unmatch').forEach((unmatchedCard) => {
         setTimeout(function() {
-          unmatchedCard.classList = 'animate_animated animate_flipInY card';
+          unmatchedCard.classList = 'card';
         }, 600);
       })
     });
