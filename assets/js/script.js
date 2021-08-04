@@ -19,7 +19,7 @@ let animalCards = document.getElementsByClassName("card");
 const cards = ['cow', 'dog', 'gecko', 'kingfisher', 'giraffe', 'lion', 'panda', 'eagle', 'tiger', 'zebra', ]
 const animalPairs = [...cards, ...cards];
 var openedCards = [];
-
+const cardQuantity = animalPairs.length;
 const maxPairs = cards.length;
 let numMatch = 0
 
@@ -29,7 +29,7 @@ for (let i=0; i<myAnimals.children.length; i++){
     animalsArray.push(myAnimals.children[i].innerHTML);
 }
 console.log(animalsArray)
-*/
+
 // const images = document.querySelectorAll('#deck img');
 // for (let i = 0; i < images.length; i++) {
 //     images[i].src = i;
@@ -52,80 +52,97 @@ function shuffleCards() {
         // attach a click event listener to the image
         images[i].addEventListener('click', event => handleClick(event));
     };
-
-    let cards = document.querySelector('#deck li')
-    cards.addEventListener('click', event => handleClick(event));
 }
 
-function handleClick(event){
+function beginGame() {
+      //gives the unopenedcards a click
+      document.querySelectorAll(".card").forEach((card) => {
+        card.addEventListener("click", event => handleClick(event));
+
+        if (card.classList.contains('show')){
+            return;
+        }
+
+        card.classList.add('show', 'flipInY', 'animated');
+}
+*/
+
+function handleClick(){
     
-    const ref = event.target.dataset.ref;
-    openedCards.push(ref);
-    console.log(openedCards);
-    checkMatch();
+    document.querySelectorAll(".card").forEach((card) => {
+        card.addEventListener("click", function(){
+
+        if (card.classList.contains('show')){
+                return;
+        }
+            
+        card.classList.add('show', 'animate_animiated', 'animate_flipInY');
+
+        let openCard = card.innerHTML;
+        openedCards.push(openCard);
+        console.log(openedCards);
+        
+        if (openedCards.length > 1){
+            if (openCard === openedCards[0]) {
+                match();
+            } else {
+                unMatched();
+            }
+        };
+        });
+    });
 }
-//TODO LIST
-//Get the click to recognise the matching data sets and check for correct answer.
-//Find a way to show matching 
 
 function startGame() {
-
+    document.querySelector('#deck').innerHTML = '';
     numMatch = 0
     resetTimer();
     addTime();
-    shuffleCards();
+    shuffle(animalPairs);
 
-    //if total pairs = maximum game ends and modal with congrats pops up
+    for (let a=0; a<cardQuantity; a++){
+        document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${animalPairs[a]}.jpg"/></li>`;
+    };
+
+    handleClick();
+    stopGame();
+    
+};
+
+function stopGame() {
     if(numMatch === maxPairs) {
+        console.log('welldone');
         stopTimer();
-        wellDone();
-    }
-
-    // document.getElementById("deck").children.innerHTML = ``;
-    // console.log(document.getElementById("deck").children.innerHTML);
-
-    // shuffle(animalPairs);
-
-    // for (x=0; x<animalPairs.length; x++){
-    //     for (let i = 0; i < images.length; i++) {
-    //         images[i].src = `assets/images/${animalPairs[i]}.jpg`;
-    //         }
-    // }
-}
-
-function wellDone() {
-    //function to show times and score in a modal on the completion of the game
-}
-
-function checkMatch() {
-    /*
-    let li = document.querySelector('#deck li');
-    for (let c=0; c<li.length; c++){
-        var classes = li[c];
-        console.log(classes);
-    }
-    */
-
-    if (openedCards[0] === openedCards[1]) {
-            match();
-    } else {
-        unMatched();
-        console.log(openedCards)
+        congratsMessage();
     }
 }
 
+function congratsMessage() {}
+    
 function match() {
-    console.log('matched');
-    document.querySelectorAll('.card').forEach((matched) => {
-        matched.classList.add('match');
-        matched.classList.remove('show');
-    });
+    numMatch++;
     openedCards = [];
-}
+  
+    document.querySelectorAll(".show").forEach((matchedCard) => {
+      matchedCard.classList.add('match','animate_animated','animate_flip')
+      matchedCard.classList.remove('show')
+    });
+  
+  };
+  
 
 function unMatched() {
-    console.log('unmatched');
-}
+    openedCards = [];
+  
+    document.querySelectorAll(".show:not(.match)").forEach((unmatchedCard) => {
+      unmatchedCard.classList = 'card show unmatch animate_animated animate_shake';
+      document.querySelectorAll('.unmatch').forEach((unmatchedCard) => {
+        setTimeout(function() {
+          unmatchedCard.classList = 'animate_animated animate_flipInY card';
+        }, 600);
+      })
+    });
+  };
 
 function showEasy(){
     for (let i = 0; i < mediumClass.length; i++){
@@ -200,16 +217,12 @@ function shuffle(array) {
     return array;
 }
 
-function mixCards() {}
-
-function checkmatch() {}
 
 function increaseScore() {}
 
 function changeScoreColor() {}
 
 
-function congratsMessage() {}
 
 
 

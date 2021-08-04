@@ -72,11 +72,11 @@ h1 {
     list-style-type: none;
 }
 
-.deck .card {
+.card {
     height: 125px;
     width: 125px;
     margin: 1.2rem 0.2rem;
-    background: #141214;
+    background: rgba(255, 245, 255, 0.2);
     font-size: 0;
     color: #ffffff;
     border-radius: 5px;
@@ -96,9 +96,14 @@ h1 {
     display:block;
 }
 
+.flipInY {
+  animation: flipInY;
+}
+
+
 /*TESTING DISPLAY NONE should be block*/
 .card.match img {
-    display:none;
+    display:block;
 }
 
 .card.hide img {
