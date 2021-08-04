@@ -25,8 +25,7 @@ const easyPairs = [...easyCards,...easyCards];
 
 
 var openedCards = [];
-///const cardQuantity = animalPairs.length;
-const maxPairs = easyCards.length;
+var maxPairs;
 let score = document.getElementById('score');
 let numMatch;
 let moves = 0;
@@ -71,10 +70,9 @@ function startGame() {
 
 function stopGame() {
     if(numMatch === maxPairs) {
-        console.log('welldone');
         stopTimer();
         congratsMessage();
-        changeScoreColor();
+        changeScoreText();
     }
 }
 
@@ -126,7 +124,7 @@ function unMatched() {
   };
 
 function showEasy(){
-    
+    maxPairs = easyCards.length;
     document.querySelector('#deck').innerHTML = '';
     document.querySelector('#game-holder').style.width = '680px';
     shuffle(easyPairs);
@@ -137,6 +135,7 @@ function showEasy(){
 }
 
 function showMedium(){
+    maxPairs = mediumCards.length;
     document.querySelector('#deck').innerHTML = '';
     document.querySelector('#game-holder').style.width = '680px';
     shuffle(mediumPairs);
@@ -147,6 +146,7 @@ function showMedium(){
 }
 
 function showHard(){
+    maxPairs = hardCards.length;
     document.querySelector('#deck').innerHTML = '';
     document.querySelector('#game-holder').style.width = '760px';
     shuffle(hardPairs);
@@ -162,10 +162,13 @@ function changeDifficulty() {
 
    if (level == "diff-easy"){
         showEasy();
+    
    } else if (level == "diff-medium"){
        showMedium();
+     
    } else if (level == "diff-hard"){
        showHard();
+       maxPairs = hardCards.length;
    }
 }
 
@@ -202,7 +205,7 @@ function increaseScore() {
         score.innerHTML = `Pairs ${numMatch}/${maxPairs}`    
 }
 
-function changeScoreColor() {
+function changeScoreText() {
     let result = document.querySelector('#result');
     if (moves <= 15){
         result.innerHTML = 'Your result was EXCELLENT!';
