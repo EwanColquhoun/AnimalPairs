@@ -30,10 +30,14 @@ var maxPairs;
 let score = document.getElementById('score');
 let numMatch;
 let moves = 0;
+var animalName;
 
-
+for (var a=0; a<easyPairs.length; a++){
+    easyAnimalName = easyPairs[a];
+}
 
 function handleClick(){
+
     document.querySelectorAll(".card").forEach((card) => {
         card.addEventListener("click", function(){
             addTime();
@@ -45,10 +49,12 @@ function handleClick(){
         let openCard = card.innerHTML;
         openedCards.push(openCard);
         console.log(openedCards);
-        
+        var cardsNum = openedCards.toString(); 
         if (openedCards.length > 1){
             if (openCard === openedCards[0]) {
-                match();
+                match(); 
+                checkDataMatch(cardsNum);
+                var cardsNum = '';
             } else {
                 unMatched();
             }
@@ -90,27 +96,28 @@ function congratsMessage() {
     
     document.getElementById('modal-close-easy').addEventListener('click', function() {
             document.getElementById('myModal').style.display = 'none';
+            deckShufflePlay();
             startGame();
             showEasy();
-            deckShufflePlay();
     });
 
     document.getElementById('modal-close-medium').addEventListener('click', function() {
             document.getElementById('myModal').style.display = 'none';
+            deckShufflePlay();
             startGame();
             showMedium();
-            deckShufflePlay();
     });
 
     document.getElementById('modal-close-hard').addEventListener('click', function() {
             document.getElementById('myModal').style.display = 'none';
+            deckShufflePlay();
             startGame();
-            showHard();
-            deckShufflePlay();     
+            showHard();    
     });
 }
 
 function match() {
+    match.called = true;
     moves++
     numMatch++;
     openedCards = [];
@@ -125,6 +132,7 @@ function match() {
   
 
 function unMatched() {
+    unMatched.called = true;
     moves++
     openedCards = [];
   
@@ -144,8 +152,8 @@ function showEasy(){
     document.querySelector('#deck').classList.add('easy-deck');
     document.querySelector('#deck').classList.remove('hard-deck');
     shuffle(easyPairs);
-        for (let a=0; a<easyPairs.length; a++){
-            document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${easyPairs[a]}.jpg"/></li>`;
+    for (var a=0; a<easyPairs.length; a++){
+        document.querySelector('.deck').innerHTML += `<li class="card" data-ref="${easyPairs[a]}"><img src="assets/images/${easyPairs[a]}.jpg"/></li>`;
     };
     cardsNum = document.getElementById('deck').childElementCount/2;
     score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
@@ -158,7 +166,7 @@ function showMedium(){
     document.querySelector('#deck').classList.add('easy-deck');
     document.querySelector('#deck').classList.remove('hard-deck');
     shuffle(mediumPairs);
-        for (let a=0; a<mediumPairs.length; a++){
+        for (var a=0; a<mediumPairs.length; a++){
             document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${mediumPairs[a]}.jpg"/></li>`;
     };
     cardsNum = document.getElementById('deck').childElementCount/2;
@@ -171,7 +179,7 @@ function showHard(){
     document.querySelector('#deck').innerHTML = '';
     document.querySelector('#deck').classList.add('hard-deck');
     shuffle(hardPairs);
-        for (let a=0; a<hardPairs.length; a++){
+        for (var a=0; a<hardPairs.length; a++){
             document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${hardPairs[a]}.jpg"/></li>`;
     };
     cardsNum = document.getElementById('deck').childElementCount/2;
@@ -179,27 +187,35 @@ function showHard(){
     handleClick();
 }
 
+function checkDataMatch(cardsNum){
+    if(match){
+        animalName = cardsNum.charAt(24)
+        playAnimalSounds(animalName);
+    } else {
+        return;
+    }
+}
 
 function changeDifficulty() {
    level = this.id;
 
    if (level == "diff-easy"){
-        showEasy();
-        stopTimer();
-        resetTimer();
-        deckShufflePlay();
-    
+    deckShufflePlay();
+    showEasy();
+    stopTimer();
+    resetTimer();
+        
    } else if (level == "diff-medium"){
-       showMedium();
-       stopTimer();
-       resetTimer();
-       deckShufflePlay();
+    deckShufflePlay();
+    showMedium();
+    stopTimer();
+    resetTimer();
      
    } else if (level == "diff-hard"){
-       showHard();
-       stopTimer();
-       resetTimer();
-       deckShufflePlay();
+    deckShufflePlay();
+    showHard();
+    stopTimer();
+    resetTimer();
    }
 }
 

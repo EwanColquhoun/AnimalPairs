@@ -1,6 +1,6 @@
 ///define audio functions
 let audio = {
-    ShuffleSound: new Audio("assets/audio/shuffling-cards-1.mp3"),
+    ShuffleSound: new Audio('assets/audio/shuffle.mp3'),
     
  
     soundVolumeSlider: document.getElementById("volume-slider"),
@@ -9,6 +9,8 @@ let audio = {
     lastVolume: 0,
 };
 
+let easySounds = ['dog', 'shuffle'];
+
 function deckShufflePlay() {
         if (audio.soundMute === true) {
             return;
@@ -16,4 +18,9 @@ function deckShufflePlay() {
             audio.ShuffleSound.currentTime = 0;
             audio.ShuffleSound.play();
         }
+}
+
+function playAnimalSounds (animalName){
+    animalAudio = new Audio(`assets/audio/${animalName}.mp3`);
+    animalAudio.play();
 }
