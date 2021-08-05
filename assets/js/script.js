@@ -83,16 +83,26 @@ function congratsMessage() {
         `
         <h2>Congratulations!</h2>
         <h3>You completed the game in <span>${timerSpan.textContent}.<br>
-        <h4><span id="result"></span></h4><br><i class="fas fa-thumbs-up"></i></span></h3><br>
-        <button id="close-modal">Try Again!</button>
+        <h3><span id="result"></span></h4><br><i class="fas fa-thumbs-up"></i></span></h3><br>
+        <h2>Choose a difficulty to try again! <i class="fas fa-arrow-down"></i></h2>
+        <button class="close-modal easy">Easy</button><button class="close-modal medium">Medium</button><button class="close-modal hard">Hard</button></button>
 
         `;
 
-    let closeButton = document.querySelector('#close-modal');
-    closeButton.addEventListener('click', function() {
-        document.getElementById('myModal').style.display = 'none';
-        startGame();
-        })
+    let closeButton = document.querySelectorAll('close-modal').forEach((button) => {
+        closeButton.addEventListener('click', function() {
+            document.getElementById('myModal').style.display = 'none';
+            startGame();
+            })
+        if (button.classList.contains('easy')){
+            showEasy();
+        } else if (button.classList.contains('medium')){
+            showMedium();
+        } else if (button.classList.contains('hard')){
+            showHard();
+        }
+        
+    });
 
 }
 
@@ -136,7 +146,6 @@ function showEasy(){
     cardsNum = document.getElementById('deck').childElementCount/2;
     score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
     handleClick();
-    clearTimeout();
 }
 
 function showMedium(){
@@ -151,7 +160,6 @@ function showMedium(){
     cardsNum = document.getElementById('deck').childElementCount/2;
     score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
     handleClick();
-    clearTimeout();
 }
 
 function showHard(){
@@ -165,7 +173,6 @@ function showHard(){
     cardsNum = document.getElementById('deck').childElementCount/2;
     score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
     handleClick();
-    clearTimeout();
 }
 
 
@@ -174,13 +181,18 @@ function changeDifficulty() {
 
    if (level == "diff-easy"){
         showEasy();
+        stopTimer();
+        resetTimer();
     
    } else if (level == "diff-medium"){
        showMedium();
+       stopTimer();
+       resetTimer();
      
    } else if (level == "diff-hard"){
        showHard();
-       maxPairs = hardCards.length;
+       stopTimer();
+       resetTimer();
    }
 }
 

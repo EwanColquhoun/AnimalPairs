@@ -24,10 +24,10 @@ html, body {
 #myModal {
   display: none;
   z-index: 1;
-  width: 70%;
-  height: 70%;
+  width: 60%;
+  height: 71%;
   top: 20%;
-  left: 15%;
+  left: 20%;
   background-color: rgba(245, 33, 121, 0.9);
   position: fixed;
   transition: 1.0s;
@@ -46,7 +46,7 @@ html, body {
   position: absolute;
   top: 10%;
   left: 5%;
-  font-size: 2em;
+  font-size: 1em;
   text-align: center;
   line-height: 2;
 }
@@ -55,19 +55,16 @@ html, body {
   font-size: larger;
 }
 
-#close-modal {
-  width: 200px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.close-modal {
+  width: 120px;
+  height: 55px;
+  display: inline-block;
   font-size: 1.3em;
   font-family: inherit;
   border-radius: 10px;
   box-shadow: 8px 9px 20px 0px;
   cursor: pointer;
-  animation: bounce 1.5s infinite;
-  margin: 0px auto;
+  margin: 8px 4%;
 }
 
 #close-modal:hover {
@@ -310,4 +307,11 @@ footer {
   #deck-info-holder {
     width: 100%;
   }
+
+  .card {
+    margin: 0.2rem 0.2rem;
+  }
+}
+
+@media (max-width: 400px) {
 }
