@@ -150,6 +150,7 @@ function showMedium(){
     cardsNum = document.getElementById('deck').childElementCount/2;
     score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
     handleClick();
+    resetTimer();
 }
 
 function showHard(){
@@ -163,6 +164,7 @@ function showHard(){
     cardsNum = document.getElementById('deck').childElementCount/2;
     score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
     handleClick();
+    resetTimer();
 }
 
 
@@ -184,6 +186,7 @@ function changeDifficulty() {
 const resetBtn = document.getElementById("reset-game").addEventListener('click', resetGame);
 
 function resetGame() {
+    timerSpan.classList.remove('flash', 'long-flash');
     resetTimer();
     startGame();
     console.log("reset");
@@ -235,6 +238,17 @@ var timerSpan = document.getElementById("timer"),
     seconds = 0, minutes = 0,
     t;
 
+function timerFlash() {
+    if (seconds >= 40) {
+        timerSpan.classList.add('flash');
+    }
+
+    if (minutes >= 1) {
+        timerSpan.classList.remove('flash');
+        timerSpan.classList.add('long-flash');
+    }
+}
+
 function addTime() {
     clearTimeout(t);
     seconds++;
@@ -245,15 +259,7 @@ function addTime() {
     
     timerSpan.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + " Minutes " + (seconds > 9 ? seconds : "0" + seconds) + " Seconds";
     timer();
-
-    if (seconds >= 40) {
-        timerSpan.classList.add('flash');
-    }
-
-    if (minutes >= 1) {
-        timerSpan.classList.remove('flash');
-        timerSpan.classList.add('long-flash');
-    }
+    timerFlash();
 }
 
 function stopTimer() {
