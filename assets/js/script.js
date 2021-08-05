@@ -22,6 +22,7 @@ const mediumCards = ['cow', 'dog', 'gecko', 'kingfisher', 'giraffe', 'lion', 'pa
 const mediumPairs = [...mediumCards,...mediumCards];
 const easyCards = ['giraffe', 'lion', 'panda', 'eagle', 'tiger', 'zebra'];
 const easyPairs = [...easyCards,...easyCards];
+var cardsNum;
 
 
 var openedCards = [];
@@ -64,8 +65,7 @@ function startGame() {
     resetTimer();
     addTime();
     showEasy();
-    changeDifficulty();
-    score.innerHTML = `Pairs ${numMatch}/${maxPairs}` 
+    changeDifficulty(); 
 };
 
 function stopGame() {
@@ -83,7 +83,8 @@ function congratsMessage() {
         `
         <h2>Congratulations!</h2>
         <h3>You completed the game in <span>${timerSpan.textContent}.<br>
-        <h4><span id="result"></span></h4><br><i class="fas fa-thumbs-up"></i></span></h3>
+        <h4><span id="result"></span></h4><br><i class="fas fa-thumbs-up"></i></span></h3><br>
+        <button id="close-modal">Try Again!</button>
 
         `;
 
@@ -126,33 +127,41 @@ function unMatched() {
 function showEasy(){
     maxPairs = easyCards.length;
     document.querySelector('#deck').innerHTML = '';
-    document.querySelector('#game-holder').style.width = '680px';
+    document.querySelector('#deck').classList.add('narrow', 'easy-deck');
+    document.querySelector('#deck').classList.remove('hard-deck');
     shuffle(easyPairs);
         for (let a=0; a<easyPairs.length; a++){
             document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${easyPairs[a]}.jpg"/></li>`;
     };
+    cardsNum = document.getElementById('deck').childElementCount/2;
+    score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
     handleClick();
 }
 
 function showMedium(){
     maxPairs = mediumCards.length;
     document.querySelector('#deck').innerHTML = '';
-    document.querySelector('#game-holder').style.width = '680px';
+    document.querySelector('#deck').classList.add('narrow', 'easy-deck');
+    document.querySelector('#deck').classList.remove('hard-deck');
     shuffle(mediumPairs);
         for (let a=0; a<mediumPairs.length; a++){
             document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${mediumPairs[a]}.jpg"/></li>`;
     };
+    cardsNum = document.getElementById('deck').childElementCount/2;
+    score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
     handleClick();
 }
 
 function showHard(){
     maxPairs = hardCards.length;
     document.querySelector('#deck').innerHTML = '';
-    document.querySelector('#game-holder').style.width = '760px';
+    document.querySelector('#deck').classList.add('narrow', 'hard-deck');
     shuffle(hardPairs);
         for (let a=0; a<hardPairs.length; a++){
             document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${hardPairs[a]}.jpg"/></li>`;
     };
+    cardsNum = document.getElementById('deck').childElementCount/2;
+    score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
     handleClick();
 }
 
