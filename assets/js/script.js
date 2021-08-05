@@ -37,6 +37,7 @@ function handleClick(){
     
     document.querySelectorAll(".card").forEach((card) => {
         card.addEventListener("click", function(){
+            addTime();
         if (card.classList.contains('show')){
                 return;
         }
@@ -63,7 +64,6 @@ function startGame() {
     numMatch = 0;
     moves = 0;
     resetTimer();
-    addTime();
     showEasy();
     changeDifficulty(); 
 };
@@ -136,6 +136,7 @@ function showEasy(){
     cardsNum = document.getElementById('deck').childElementCount/2;
     score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
     handleClick();
+    clearTimeout();
 }
 
 function showMedium(){
@@ -150,7 +151,7 @@ function showMedium(){
     cardsNum = document.getElementById('deck').childElementCount/2;
     score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
     handleClick();
-    resetTimer();
+    clearTimeout();
 }
 
 function showHard(){
@@ -164,7 +165,7 @@ function showHard(){
     cardsNum = document.getElementById('deck').childElementCount/2;
     score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
     handleClick();
-    resetTimer();
+    clearTimeout();
 }
 
 
