@@ -63,8 +63,8 @@ function handleClick(){
 function startGame() {
     numMatch = 0;
     moves = 0;
-    resetTimer();
     showEasy();
+    resetTimer();
     changeDifficulty(); 
 };
 
@@ -85,25 +85,30 @@ function congratsMessage() {
         <h3>You completed the game in <span>${timerSpan.textContent}.<br>
         <h3><span id="result"></span></h4><br><i class="fas fa-thumbs-up"></i></span></h3><br>
         <h2>Choose a difficulty to try again! <i class="fas fa-arrow-down"></i></h2>
-        <button class="close-modal easy">Easy</button><button class="close-modal medium">Medium</button><button class="close-modal hard">Hard</button></button>
+        <button id="modal-close-easy" class="close-modal easy">Easy</button><button id="modal-close-medium" class="close-modal medium">Medium</button><button id="modal-close-hard" class="close-modal hard">Hard</button>
 
         `;
 
-    let closeButton = document.querySelectorAll('close-modal').forEach((button) => {
-        closeButton.addEventListener('click', function() {
+    
+    document.getElementById('modal-close-easy').addEventListener('click', function() {
             document.getElementById('myModal').style.display = 'none';
             startGame();
-            })
-        if (button.classList.contains('easy')){
             showEasy();
-        } else if (button.classList.contains('medium')){
-            showMedium();
-        } else if (button.classList.contains('hard')){
-            showHard();
-        }
-        
     });
 
+    document.getElementById('modal-close-medium').addEventListener('click', function() {
+            document.getElementById('myModal').style.display = 'none';
+            startGame();
+            showMedium();
+
+    });
+
+    document.getElementById('modal-close-hard').addEventListener('click', function() {
+            document.getElementById('myModal').style.display = 'none';
+            startGame();
+            showHard();
+     
+    });
 }
 
 function match() {
@@ -137,7 +142,7 @@ function unMatched() {
 function showEasy(){
     maxPairs = easyCards.length;
     document.querySelector('#deck').innerHTML = '';
-    document.querySelector('#deck').classList.add('narrow', 'easy-deck');
+    document.querySelector('#deck').classList.add('easy-deck');
     document.querySelector('#deck').classList.remove('hard-deck');
     shuffle(easyPairs);
         for (let a=0; a<easyPairs.length; a++){
@@ -151,7 +156,7 @@ function showEasy(){
 function showMedium(){
     maxPairs = mediumCards.length;
     document.querySelector('#deck').innerHTML = '';
-    document.querySelector('#deck').classList.add('narrow', 'easy-deck');
+    document.querySelector('#deck').classList.add('easy-deck');
     document.querySelector('#deck').classList.remove('hard-deck');
     shuffle(mediumPairs);
         for (let a=0; a<mediumPairs.length; a++){
@@ -165,7 +170,7 @@ function showMedium(){
 function showHard(){
     maxPairs = hardCards.length;
     document.querySelector('#deck').innerHTML = '';
-    document.querySelector('#deck').classList.add('narrow', 'hard-deck');
+    document.querySelector('#deck').classList.add('hard-deck');
     shuffle(hardPairs);
         for (let a=0; a<hardPairs.length; a++){
             document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${hardPairs[a]}.jpg"/></li>`;
@@ -199,7 +204,6 @@ function changeDifficulty() {
 const resetBtn = document.getElementById("reset-game").addEventListener('click', resetGame);
 
 function resetGame() {
-    timerSpan.classList.remove('flash', 'long-flash');
     resetTimer();
     startGame();
     console.log("reset");
@@ -252,11 +256,11 @@ var timerSpan = document.getElementById("timer"),
     t;
 
 function timerFlash() {
-    if (seconds >= 40) {
+    if (seconds >= 45) {
         timerSpan.classList.add('flash');
     }
 
-    if (minutes >= 1) {
+    if (minutes >= 2) {
         timerSpan.classList.remove('flash');
         timerSpan.classList.add('long-flash');
     }
@@ -280,6 +284,7 @@ function stopTimer() {
 }
 
 function resetTimer() {
+    timerSpan.classList.remove('flash', 'long-flash');
     seconds = 0;
     minutes = 0;
     timerSpan.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + " Minutes " + (seconds > 9 ? seconds : "0" + seconds) + " Seconds";

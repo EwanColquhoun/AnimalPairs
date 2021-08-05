@@ -65,6 +65,7 @@ html, body {
   box-shadow: 8px 9px 20px 0px;
   cursor: pointer;
   margin: 8px 4%;
+  background-color: #77aea7;
 }
 
 #close-modal:hover {
@@ -311,7 +312,4 @@ footer {
   .card {
     margin: 0.2rem 0.2rem;
   }
-}
-
-@media (max-width: 400px) {
 }
