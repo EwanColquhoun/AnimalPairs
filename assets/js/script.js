@@ -34,7 +34,6 @@ let moves = 0;
 
 
 function handleClick(){
-    
     document.querySelectorAll(".card").forEach((card) => {
         card.addEventListener("click", function(){
             addTime();
@@ -43,7 +42,6 @@ function handleClick(){
         }
             
         card.classList.add('show', 'animated', 'flipInY');
-
         let openCard = card.innerHTML;
         openedCards.push(openCard);
         console.log(openedCards);
@@ -188,6 +186,7 @@ function changeDifficulty() {
         showEasy();
         stopTimer();
         resetTimer();
+        deckShufflePlay();
     
    } else if (level == "diff-medium"){
        showMedium();
