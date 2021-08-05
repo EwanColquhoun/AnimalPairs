@@ -218,9 +218,10 @@ h1 {
     position: absolute;
     right: 150px;
     background-color: #f9f9f9;
-    min-width: 100px;
+    width: 132px;
     box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
     z-index: 1;
+
   }
   /* Links inside the dropdown */
   .dropdown-content button {
@@ -231,9 +232,10 @@ h1 {
     width: 100%;
     font-size: large;
   }
-  
+
   /* Change color of dropdown links on hover */
-  .dropdown-content button:hover {background-color: #e7c8c8}
+  .dropdown-content button:hover {
+    background-color: #e7c8c8}
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
@@ -250,6 +252,10 @@ h1 {
     background-color: transparent;
     animation: pulse 1s infinite;
     margin-top: 15px;
+}
+
+#reset-game:hover {
+  animation: rotateIn 1s;
 }
 
 footer {

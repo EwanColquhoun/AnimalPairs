@@ -92,20 +92,21 @@ function congratsMessage() {
             document.getElementById('myModal').style.display = 'none';
             startGame();
             showEasy();
+            deckShufflePlay();
     });
 
     document.getElementById('modal-close-medium').addEventListener('click', function() {
             document.getElementById('myModal').style.display = 'none';
             startGame();
             showMedium();
-
+            deckShufflePlay();
     });
 
     document.getElementById('modal-close-hard').addEventListener('click', function() {
             document.getElementById('myModal').style.display = 'none';
             startGame();
             showHard();
-     
+            deckShufflePlay();     
     });
 }
 
@@ -192,17 +193,20 @@ function changeDifficulty() {
        showMedium();
        stopTimer();
        resetTimer();
+       deckShufflePlay();
      
    } else if (level == "diff-hard"){
        showHard();
        stopTimer();
        resetTimer();
+       deckShufflePlay();
    }
 }
 
 const resetBtn = document.getElementById("reset-game").addEventListener('click', resetGame);
 
 function resetGame() {
+    stopTimer();
     resetTimer();
     startGame();
     console.log("reset");
