@@ -126,7 +126,9 @@ h1 {
   max-width: 760px;
 }
 
-
+#score, #timer {
+  font-size: larger;
+}
 
 .card {
   height: 125px;
@@ -164,6 +166,23 @@ h1 {
 .shake {
   animation: shakeX 1s;
   animation-delay: 200ms;
+}
+
+.flash {
+  color: #FFC745;
+  background-color: #005453;
+  border-radius: 5px;
+}
+
+.long-flash {
+  color: #FF1100;
+  background: black;
+  border-radius: 5px;
+  transform: scale(1.5, 1.5);
+  animation: flash;
+  animation-duration: 1.2s; 
+  animation-iteration-count: infinite;
+
 }
 
 /*TESTING DISPLAY NONE should be block*/
@@ -232,6 +251,7 @@ h1 {
     font-size: 300%;
     background-color: transparent;
     animation: pulse 1s infinite;
+    margin-top: 15px;
 }
 
 footer {
@@ -266,6 +286,10 @@ footer {
   #myModal {
     width: 100%;
     left: 0%;
+  }
+
+  #score, #timer {
+    font-size: initial;
   }
 
   .card img {

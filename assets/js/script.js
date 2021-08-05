@@ -245,6 +245,15 @@ function addTime() {
     
     timerSpan.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + " Minutes " + (seconds > 9 ? seconds : "0" + seconds) + " Seconds";
     timer();
+
+    if (seconds >= 40) {
+        timerSpan.classList.add('flash');
+    }
+
+    if (minutes >= 1) {
+        timerSpan.classList.remove('flash');
+        timerSpan.classList.add('long-flash');
+    }
 }
 
 function stopTimer() {
