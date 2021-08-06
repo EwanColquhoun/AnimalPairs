@@ -26,11 +26,21 @@ function playAnimalSounds (animalName){
 }
 
 function cardTurnOver () {
-    cardClick = new Audio('assets/audio/click.mp3');
+    cardClick = new Audio('assets/audio/click2.mp3');
     if (audio.soundMute === true) {
         return;
     } else {
         cardClick.currentTime = 0;
         cardClick.play();
+    }
+}
+
+function wrongMatch () {
+    wrongCard = new Audio('assets/audio/wrong-match.mp3');
+    if (audio.soundMute === true) {
+        return;
+    } else {
+        wrongCard.currentTime = 0;
+        wrongCard.play();
     }
 }

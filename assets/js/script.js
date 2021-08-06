@@ -80,6 +80,7 @@ function handleClick(){
                 checkDataMatch(cardsNum);
                 var cardsNum = '';
             } else {
+                wrongMatch();
                 unMatched();
             }
         };
