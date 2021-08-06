@@ -36,19 +36,19 @@ html, body {
 #welcome-modal {
   display: block;
   position: absolute;
-  width: 60%;
-  height: 500px;
-  top: 20%;
-  left: 20%;
+  height: auto;
+  width: 52%;
+  top: 15%;
+  left: 24%;
   z-index: 5;
   line-height: 2;
   text-align: center;
   background-color: #8ad2aa;
-  border-radius: 100px;
-  transition-property: transform;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
+  border-radius: 50px;
+}
+
+#welcome-modal p {
+  padding: 0px 15px;
 }
 
 #myModal {
@@ -60,8 +60,10 @@ html, body {
   background-color: rgba(119, 119, 119, 0.63);
 }
 
+
 .fade {
-  transition: opacity 0.2s linear;
+  transition: transform .3s ease-out;
+  transform: translate(0,-50px);
 }
 
 .modal-content{
@@ -100,7 +102,7 @@ html, body {
   border-radius: 10px;
   box-shadow: 8px 9px 20px 0px;
   cursor: pointer;
-  margin: 8px 4%;
+  margin: 15px 4%;
   background-color: #77aea7;
 }
 
@@ -309,6 +311,13 @@ footer {
   padding: 5px 15px;
 }
 
+@media (max-width: 1100px) {
+  #welcome-modal {
+    width: 80%;
+    left:10%
+  }
+}
+
 @media (max-width: 800px) {
   #congrats-div {
     font-size: smaller;
@@ -319,6 +328,7 @@ footer {
     height: 50px;
     font-size: 2.3em;
     margin: 60px auto;
+  }
 }
   
 
@@ -353,5 +363,11 @@ footer {
 
   .card {
     margin: 0.2rem 0.2rem;
+  }
+
+  #welcome-modal {
+    width: 100%;
+    left: 0%;
+    line-height: initial;
   }
 }

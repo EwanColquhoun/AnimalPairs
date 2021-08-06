@@ -12,10 +12,10 @@
 
 </head>
 <body>
-    <div id="welcome-modal-box" class="modal fade">
+    <div id="welcome-modal-box" class="modal">
         <div id="welcome-modal" class="fade">
             <h2>Welcome to <strong>Animal Pairs!</strong></h2>
-            <h3>How to Play</h3>
+            <h3>How to Play</h3><button><i class="fas fa-music"></i></button>
             <p>The aim of the game is to match all the cards.</p>
             <p>You can select your level of difficulty using the difficulty button.</p>
             <p>When you select a card, it turns over to reveal the animal on it.</p>
@@ -23,6 +23,7 @@
             <p>There is a timer and a pairs counter above the cards.</p>
             <p>When you have successfully matched all the pairs you score and time will be displayed.</p>
             <p>You wil lthen have the option to compete again and a level of your choice!</p>
+            <h3><i class="fas fa-arrow-down"></i> Choose a difficulty to begin! <i class="fas fa-arrow-down"></i></h3>
             <button id="welcome-modal-close-easy" class="close-modal easy">Easy</button>
             <button id="welcome-modal-close-medium" class="close-modal medium">Medium</button>
             <button id="welcome-modal-close-hard" class="close-modal hard">Hard</button>
@@ -32,7 +33,7 @@
     <div id="myModal" class="modal fade">
     
       <!-- Modal content -->
-      <div class="modal-content">
+      <div class="modal-content fade">
         <div id="congrats-div">
             <button id="close-modal-easy" class="close-modal easy">Easy</button>
             <button id="close-modal-medium" class="close-modal medium">Medium</button>
@@ -43,6 +44,13 @@
     </div>
 
     <h1>Animal Pairs</h1>
+
+        <div id="sound-rules">
+            <div id="sound-controls"></div>
+            <div id="rules-holder">
+                <button>Rules</button>
+            </div>
+        </div>
 
         <div id="deck-info-holder">
             <div class="info-holder"><span id="score"></span></div>

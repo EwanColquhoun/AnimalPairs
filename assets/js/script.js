@@ -37,6 +37,9 @@ for (var a=0; a<easyPairs.length; a++){
 }
 
 function welcomeMessage() {
+    document.querySelector("#welcome-modal-box").addEventListener('click', function( ){
+        document.getElementById('welcome-modal-box').style.display = 'none';
+    });
     document.getElementById('welcome-modal-close-easy').addEventListener('click', function() {
         document.getElementById('welcome-modal-box').style.display = 'none';
         deckShufflePlay();
@@ -107,6 +110,10 @@ function stopGame() {
 }
 
 function congratsMessage() {
+    document.querySelector("#myModal").addEventListener('click', function( ){
+        document.getElementById('myModal').style.display = 'none';
+    });
+
     document.getElementById('myModal').style.display = 'block';
     document.querySelector('#congrats-div').innerHTML = 
 
