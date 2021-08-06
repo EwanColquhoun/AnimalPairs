@@ -21,22 +21,58 @@ html, body {
 	box-sizing: inherit;
 }
 
+.modal {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+  background-color: rgba(119, 119, 119, 0.63);
+}
+
+#welcome-modal {
+  display: block;
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  height: 500px;
+  width: 70%;
+  z-index: 5;
+  line-height: 2;
+  text-align: center;
+  background-color: #8ad2aa;
+  border-radius: 150px;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+}
+
 #myModal {
   display: none;
-  z-index: 1;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(119, 119, 119, 0.63);
+}
+
+.fade {
+  transition: opacity 0.2s linear;
+}
+
+.modal-content{
   width: 60%;
-  height: 71%;
+  height: 500px;
   top: 20%;
   left: 20%;
   background-color: rgba(245, 33, 121, 0.9);
   position: fixed;
   transition: 1.0s;
   border-radius: 100px;
-}
-
-#modal-content{
-  position: relative;
-  bottom: 50px;
 }
 
 #congrats-div {
@@ -287,7 +323,7 @@ footer {
   
 
 @media (max-width: 600px) {
-  #myModal {
+  .modal-content {
     width: 100%;
     left: 0%;
   }

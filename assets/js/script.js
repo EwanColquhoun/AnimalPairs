@@ -36,10 +36,34 @@ for (var a=0; a<easyPairs.length; a++){
     easyAnimalName = easyPairs[a];
 }
 
-function handleClick(){
+function welcomeMessage() {
+    document.getElementById('welcome-modal-close-easy').addEventListener('click', function() {
+        document.getElementById('welcome-modal-box').style.display = 'none';
+        deckShufflePlay();
+        startGame();
+        showEasy();
+    });
 
+    document.getElementById('welcome-modal-close-medium').addEventListener('click', function() {
+        document.getElementById('welcome-modal-box').style.display = 'none';
+        deckShufflePlay();
+        startGame();
+        showMedium();
+    });
+
+    document.getElementById('welcome-modal-close-hard').addEventListener('click', function() {
+        document.getElementById('welcome-modal-box').style.display = 'none';
+        deckShufflePlay();
+        startGame();
+        showHard();    
+    });
+}
+
+
+function handleClick(){
     document.querySelectorAll(".card").forEach((card) => {
         card.addEventListener("click", function(){
+            cardTurnOver();           
             addTime();
         if (card.classList.contains('show')){
                 return;
@@ -68,8 +92,9 @@ function startGame() {
     numMatch = 0;
     moves = 0;
     showEasy();
+    welcomeMessage();
     resetTimer();
-    changeDifficulty(); 
+    changeDifficulty();
 };
 
 function stopGame() {

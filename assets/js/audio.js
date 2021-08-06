@@ -24,3 +24,13 @@ function playAnimalSounds (animalName){
     animalAudio = new Audio(`assets/audio/${animalName}.mp3`);
     animalAudio.play();
 }
+
+function cardTurnOver () {
+    cardClick = new Audio('assets/audio/click.mp3');
+    if (audio.soundMute === true) {
+        return;
+    } else {
+        cardClick.currentTime = 0;
+        cardClick.play();
+    }
+}
