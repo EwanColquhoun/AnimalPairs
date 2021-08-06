@@ -21,7 +21,7 @@ html, body {
 	box-sizing: inherit;
 }
 
-.modal {
+#welcome-modal-box {
   z-index: 10;
   position: fixed;
   top: 0;
@@ -35,16 +35,20 @@ html, body {
 
 #welcome-modal {
   display: block;
-  position: absolute;
   height: auto;
-  width: 52%;
-  top: 15%;
-  left: 24%;
+  max-width: 700px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   z-index: 5;
   line-height: 2;
   text-align: center;
-  background-color: #8ad2aa;
+  background-image: radial-gradient(circle, #8ad2aa, #81db96, #84e27a, #92e855, #a8eb12);;
+  background-color: #92e855;
   border-radius: 50px;
+  transition: 1s;
 }
 
 #welcome-modal p {
@@ -57,6 +61,8 @@ html, body {
   z-index: 2;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0%;
   background-color: rgba(119, 119, 119, 0.63);
 }
 
@@ -66,15 +72,21 @@ html, body {
   transform: translate(0,-50px);
 }
 
-.modal-content{
-  width: 60%;
+#congrats-modal-content {
+  display: block;
+  max-width: 700px;
+  width: 700px;
   height: 500px;
-  top: 20%;
-  left: 20%;
-  background-color: rgba(245, 33, 121, 0.9);
   position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-image: radial-gradient(circle, #f52179, #f7318d, #f840a0, #f74eb3, #f45cc6);
+  background-color: #f52179e6;
   transition: 1.0s;
-  border-radius: 100px;
+  border-radius: 50px;
 }
 
 #congrats-div {
@@ -103,10 +115,16 @@ html, body {
   box-shadow: 8px 9px 20px 0px;
   cursor: pointer;
   margin: 15px 4%;
-  background-color: #77aea7;
+  background-color: #00c9a7;
+  background-image: radial-gradient(circle, #00c9a7, #00d2a7, #00daa6, #00e3a3, #12eba0);
 }
 
-#close-modal:hover {
+#congrats-div button :hover {
+  background-color: darkviolet;
+  color: whitesmoke;
+}
+
+#welcome-modal button :hover {
   background-color: darkviolet;
   color: whitesmoke;
 }
@@ -240,7 +258,6 @@ h1 {
     border: none;
     cursor: pointer;
     box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
-    border-radius: 10px;
     font-family: inherit;
   }
   
@@ -272,7 +289,7 @@ h1 {
   }
 
   /* Change color of dropdown links on hover */
-  .dropdown-content button:hover {
+  .diff-btn:hover {
     background-color: #e7c8c8}
   
   /* Show the dropdown menu on hover */
@@ -314,7 +331,6 @@ footer {
 @media (max-width: 1100px) {
   #welcome-modal {
     width: 80%;
-    left:10%
   }
 }
 
@@ -333,9 +349,15 @@ footer {
   
 
 @media (max-width: 600px) {
-  .modal-content {
+  h1 {
+    font-size: 4em;
+  }
+
+  #congrats-modal-content {
     width: 100%;
     left: 0%;
+    top: 10%;
+    transform: none;
   }
 
   #score, #timer {
@@ -367,7 +389,6 @@ footer {
 
   #welcome-modal {
     width: 100%;
-    left: 0%;
     line-height: initial;
   }
 }

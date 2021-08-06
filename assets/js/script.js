@@ -120,7 +120,7 @@ function congratsMessage() {
         `
         <h2>Congratulations!</h2>
         <h3>You completed the game in <span>${timerSpan.textContent}.<br>
-        <h3><span id="result"></span></h4><br><i class="fas fa-thumbs-up"></i></span></h3><br>
+        <span id="result"></span><br><i class="fas fa-thumbs-up"></i></span></h3><br>
         <h2>Choose a difficulty to try again! <i class="fas fa-arrow-down"></i></h2>
         <button id="modal-close-easy" class="close-modal easy">Easy</button><button id="modal-close-medium" class="close-modal medium">Medium</button><button id="modal-close-hard" class="close-modal hard">Hard</button>
 
@@ -291,7 +291,7 @@ function changeScoreText() {
     if (moves <= 15){
         result.innerHTML = 'Your result was EXCELLENT!';
     } else if (moves > 15 && moves < 25){
-      result.innerHTML = 'Well Done! Keep practicing to improve your score';
+      result.innerHTML = 'Well Done! Keep practising to improve your score';
     } else {
        result.innerHTML = 'Good, but see if you can do it in less moves next time!';
     }
