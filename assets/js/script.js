@@ -16,11 +16,11 @@ const deck = document.getElementById("deck");
 
 let animalCards = document.getElementsByClassName("card");
 
-const hardCards = ['cow', 'dog', 'gecko', 'kingfisher', 'giraffe', 'lion', 'panda', 'eagle', 'tiger', 'zebra'];
+const hardCards = ['cow', 'baboon', 'snake', 'kingfisher', 'dolphin', 'lion', 'polarBear', 'eagle', 'tiger', 'zebra'];
 const hardPairs = [...hardCards, ...hardCards];
-const mediumCards = ['cow', 'dog', 'gecko', 'kingfisher', 'giraffe', 'lion', 'panda', 'eagle'];
+const mediumCards = ['cow', 'baboon', 'snake', 'kingfisher', 'dolphin', 'lion', 'polarBear', 'eagle'];
 const mediumPairs = [...mediumCards,...mediumCards];
-const easyCards = ['giraffe', 'lion', 'panda', 'eagle', 'tiger', 'zebra'];
+const easyCards = ['dolphin', 'lion', 'polarBear', 'eagle', 'tiger', 'zebra'];
 const easyPairs = [...easyCards,...easyCards];
 var cardsNum;
 
