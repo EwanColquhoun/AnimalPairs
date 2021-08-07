@@ -68,7 +68,7 @@ html, body {
 
 #myModal {
   display: none;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   width: 100%;
   height: 100%;
@@ -176,6 +176,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 25px;
 }
 
 #rules-holder {
@@ -196,7 +197,6 @@ h1 {
 #sound-controls i {
   font-size: 2em;
 }
-
 
 .deck {
     padding: 1rem;
@@ -226,7 +226,9 @@ h1 {
   height: 125px;
   width: 125px;
   margin: 1.2rem 0.2rem;
-  background: rgba(255, 245, 255, 0.5);
+  background-image: url("assets/images/dog-paw.jpg");
+  background-position: center center;
+  background-size: contain;
   font-size: 0;
   color: #ffffff;
   border-radius: 5px;
@@ -290,6 +292,7 @@ h1 {
 /* Style The Dropdown Button */
 #difficulty-dropdown {
   float:left;
+  position: relative;
 }
 
 .gamebtn {
@@ -299,7 +302,7 @@ h1 {
     font-size: 25px;
     border: none;
     cursor: pointer;
-    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 50%);
     font-family: inherit;
     border-radius: 10px;
   }
@@ -314,17 +317,17 @@ h1 {
   .dropdown-content {
     display: none;
     position: absolute;
-    right: 150px;
+    right: 0px;
     background-color: #f9f9f9;
     width: 132px;
-    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 50%);
     z-index: 1;
 
   }
   /* Links inside the dropdown */
   .dropdown-content button {
     color: black;
-    padding: 12px 16px;
+    padding: 12px 0px;
     text-decoration: none;
     display: block;
     width: 100%;
@@ -389,8 +392,13 @@ footer {
     margin: 60px auto;
   }
 
-  #deck-info-holder, #rules-holder, #difficulty-dropdown {
+  #deck-info-holder {
     float: none;
+    width: 80%;
+  }
+
+  #game-data {
+    width: 70%;
   }
 }
 
@@ -436,5 +444,10 @@ footer {
   #welcome-modal {
     width: 100%;
     line-height: initial;
+  }
+
+  #rules-button, .gamebtn {
+    font-size: smaller;
+    
   }
 }
