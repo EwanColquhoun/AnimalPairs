@@ -150,6 +150,15 @@ h1 {
     font-family: 'Fredericka the Great', cursive;
 }
 
+#game-data {
+  text-align: center;
+  width: 40%;
+  height: auto;
+  display: flex;
+  margin: 10px auto;
+  justify-content: space-between;
+}
+
 #game-holder {
     display: flex;
     justify-content: center;
@@ -157,21 +166,31 @@ h1 {
     flex-direction: column;
     width: fit-content;
     margin: 0 auto;
+    clear: both;
 }
 
 #deck-info-holder {
   margin: 0 auto;
   height: 50px;
-  width: 70%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+#rules-holder {
+  float: left;
+}
+
 .info-holder {
-    width: 20%;
+    width: 30%;
     text-align: center;
     font-size: larger;
+}
+
+.float {
+  float: left;
+  margin: 0 auto;
 }
 
 #sound-controls i {
@@ -269,6 +288,10 @@ h1 {
 
 /* Dropdown button inspiration from https://www.w3schools.com/css/css_dropdowns.asp */
 /* Style The Dropdown Button */
+#difficulty-dropdown {
+  float:left;
+}
+
 .gamebtn {
     background-color: #B04571;
     color: white;
@@ -366,11 +389,10 @@ footer {
     margin: 60px auto;
   }
 
-  #rules-holder, #difficulty-dropdown {
-    width: 50%;
+  #deck-info-holder, #rules-holder, #difficulty-dropdown {
+    float: none;
   }
 }
-  
 
 @media (max-width: 600px) {
   h1 {

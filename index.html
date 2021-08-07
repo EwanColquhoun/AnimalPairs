@@ -44,16 +44,11 @@
     </div>
 
     <h1>Animal Pairs</h1>
-
-    <div id="rules-holder" class="info-holder">
+    <div id="game-data">
+        <div id="rules-holder" class="">
         <button id="rules-button" class="gamebtn">Rules</button>
-    </div>
-    <div id="deck-info-holder">
-    
-        <div class="info-holder"><span id="score"></span></div>
-        <div class="info-holder"><span id="timer">0 minutes 5 seconds</span></div>
-        <div id="sound-controls" class="info-holder"><button id="sound-button"><i class="fas fa-music"></i></button></div>
-        <div id="difficulty-dropdown" class="dropdown info-holder">
+        </div>
+        <div id="difficulty-dropdown" class="dropdown">
             <button class="gamebtn">Difficulty</button>
             <div class="dropdown-content">
                 <button clicked = true class="diff-btn" id="diff-easy">Easy</button>
@@ -61,7 +56,21 @@
                 <button clicked = true class="diff-btn" id="diff-hard">Hard</button>
                 </div>
             </div>
+    </div>
+
+    <div id="deck-info-holder" class="">
+        <div class="info-holder">
+            <span id="score"></span>
         </div>
+        <div class="info-holder">
+            <span id="timer">0 minutes 5 seconds</span>
+        </div>
+        <div id="sound-controls" class="info-holder">
+            <button id="sound-button"><i class="fas fa-music"></i></button>
+        </div>
+    </div>
+
+    
     
         <div id="game-holder">
 
