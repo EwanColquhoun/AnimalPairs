@@ -12,10 +12,13 @@
 
 </head>
 <body>
+    <!-- The Modals -->
+    <!--Welcome & rules modal-->
     <div id="welcome-modal-box" class="modal">
+        <!--Modal content-->
         <div id="welcome-modal" class="fade">
             <h2>Welcome to <strong>Animal Pairs!</strong></h2>
-            <h3>How to Play</h3><div><button><i class="fas fa-music"></i></button></div>
+            <h3>How to Play <button class="sound-button"><i class="fas fa-music"></i></button></h3>
             <p>The aim of the game is to match all the cards.<br>
             You can select your level of difficulty using the difficulty buttons.<br>
             When you select a card, it turns over to reveal an animal.<br>
@@ -28,9 +31,8 @@
             <button id="welcome-modal-close-hard" class="close-modal hard">Hard</button>
         </div>
     </div>
-    <!-- The Modal -->
+    <!-- Congratulations modal -->
     <div id="myModal">
-    
       <!-- Modal content -->
       <div id="congrats-modal-content" class="fade rotateIn">
         <div id="congrats-div">
@@ -39,7 +41,30 @@
             <button id="close-modal-hard" class="close-modal hard">Hard</button>
         </div>
       </div>
+    </div>
 
+    <div id="sounds-modal-box">
+        <div id="sounds-modal-content">
+            <div>
+                <h2>Sound Controls</h2>
+            </div>
+            <div>
+                <label for="volume-slider"><h3>Volume: </h3></label>
+                <input type="range" min="0" max="100" value="50" name="volume-slider">
+            </div>
+            <div>
+                <h3>Sound: </h3>
+                <div class="mid">
+    
+                    <label class="rocker">
+                      <input type="checkbox" checked>
+                      <span class="switch-left">On</span>
+                      <span class="switch-right">Off</span>
+                    </label>
+                  
+                  </div>
+            </div>
+        </div>
     </div>
 
     <h1>Animal Pairs</h1>
@@ -65,7 +90,7 @@
             <span id="timer">0 minutes 5 seconds</span>
         </div>
         <div id="sound-controls" class="info-holder">
-            <button id="sound-button"><i class="fas fa-music"></i></button>
+            <button class="sound-button"><i class="fas fa-music"></i></button>
         </div>
     </div>
 

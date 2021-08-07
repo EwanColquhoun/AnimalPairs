@@ -102,6 +102,7 @@ function startGame() {
     resetTimer();
     changeDifficulty();
     showRules();
+    showSound();
 };
 
 function stopGame() {
@@ -118,13 +119,35 @@ function showRules() {
     });
 }
 
+function showSound (){
+    document.querySelectorAll('.sound-button').forEach((button) => {
+        button.addEventListener("click", function(){
+            document.getElementById('sounds-modal-box').style.display = 'block';
+            });
+        });
+    document.querySelector('#sounds-modal-content').addEventListener('click', function(e){
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        return false;
+    });
+        document.querySelector('#sounds-modal-box').addEventListener('click', function( ){
+        document.getElementById('sounds-modal-box').style.display = 'none';
+    });
+}
+
+function modalClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    return false;
+}
+
 function congratsMessage() {
     document.querySelector("#myModal").addEventListener('click', function( ){
         document.getElementById('myModal').style.display = 'none';
     });
 
     document.getElementById('myModal').style.display = 'block';
-    document.getElementById('congrats-modal-content').classList.add('rotateIn');
     document.querySelector('#congrats-div').innerHTML = 
 
         `

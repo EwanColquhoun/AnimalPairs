@@ -22,10 +22,10 @@ function deckShufflePlay() {
 
 function playAnimalSounds (animalName){
     animalAudio = new Audio(`assets/audio/${animalName}.mp3`);
-    animalAudio.play();
     setTimeout(function(){
         animalAudio.pause();
-    }, 2000);
+    },2000);
+    animalAudio.play();
 }
 
 function cardTurnOver () {
