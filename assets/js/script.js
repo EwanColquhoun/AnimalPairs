@@ -101,6 +101,7 @@ function startGame() {
     welcomeMessage();
     resetTimer();
     changeDifficulty();
+    showRules();
 };
 
 function stopGame() {
@@ -109,6 +110,12 @@ function stopGame() {
         congratsMessage();
         changeScoreText();
     }
+}
+
+function showRules() {
+    document.querySelector('#rules-button').addEventListener('click', function(){
+        document.getElementById('welcome-modal-box').style.display = 'block';
+    });
 }
 
 function congratsMessage() {

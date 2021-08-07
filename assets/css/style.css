@@ -226,9 +226,10 @@ h1 {
   height: 125px;
   width: 125px;
   margin: 1.2rem 0.2rem;
-  background-image: url("assets/images/dog-paw.jpg");
+  background-image: url("assets/images/dog-paw.png");
   background-position: center center;
   background-size: contain;
+  background-color: lightblue;
   font-size: 0;
   color: #ffffff;
   border-radius: 5px;
@@ -446,7 +447,7 @@ footer {
     line-height: initial;
   }
 
-  #rules-button, .gamebtn {
+  #rules-button, #difficulty-dropdown button {
     font-size: smaller;
     
   }
