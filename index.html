@@ -33,7 +33,7 @@
     <div id="myModal">
     
       <!-- Modal content -->
-      <div id="congrats-modal-content">
+      <div id="congrats-modal-content" class="fade rotateIn">
         <div id="congrats-div">
             <button id="close-modal-easy" class="close-modal easy">Easy</button>
             <button id="close-modal-medium" class="close-modal medium">Medium</button>
@@ -45,23 +45,20 @@
 
     <h1>Animal Pairs</h1>
 
-        <div id="sound-rules">
-            <div id="sound-controls"></div>
-            <div id="rules-holder">
-                <button>Rules</button>
-            </div>
-        </div>
-
-        <div id="deck-info-holder">
-            <div class="info-holder"><span id="score"></span></div>
-            <div class="info-holder"><span id="timer">0 minutes 5 seconds</span></div>
-
-            <div id="difficulty-dropdown" class="dropdown info-holder">
-                <button class="dropbtn">Difficulty</button>
-                <div class="dropdown-content">
-                    <button clicked = true class="diff-btn" id="diff-easy">Easy</button>
-                    <button clicked = true class="diff-btn" id="diff-medium">Medium</button>
-                    <button clicked = true class="diff-btn" id="diff-hard">Hard</button>
+    <div id="rules-holder" class="info-holder">
+        <button id="rules-button" class="gamebtn">Rules</button>
+    </div>
+    <div id="deck-info-holder">
+    
+        <div class="info-holder"><span id="score"></span></div>
+        <div class="info-holder"><span id="timer">0 minutes 5 seconds</span></div>
+        <div id="sound-controls" class="info-holder"><button id="sound-button"><i class="fas fa-music"></i></button></div>
+        <div id="difficulty-dropdown" class="dropdown info-holder">
+            <button class="gamebtn">Difficulty</button>
+            <div class="dropdown-content">
+                <button clicked = true class="diff-btn" id="diff-easy">Easy</button>
+                <button clicked = true class="diff-btn" id="diff-medium">Medium</button>
+                <button clicked = true class="diff-btn" id="diff-hard">Hard</button>
                 </div>
             </div>
         </div>

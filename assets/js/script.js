@@ -37,9 +37,11 @@ for (var a=0; a<easyPairs.length; a++){
 }
 
 function welcomeMessage() {
+    
     document.querySelector("#welcome-modal-box").addEventListener('click', function( ){
         document.getElementById('welcome-modal-box').style.display = 'none';
     });
+    
     document.getElementById('welcome-modal-close-easy').addEventListener('click', function() {
         document.getElementById('welcome-modal-box').style.display = 'none';
         deckShufflePlay();
@@ -115,6 +117,7 @@ function congratsMessage() {
     });
 
     document.getElementById('myModal').style.display = 'block';
+    document.getElementById('congrats-modal-content').classList.add('rotateIn');
     document.querySelector('#congrats-div').innerHTML = 
 
         `
@@ -125,7 +128,6 @@ function congratsMessage() {
         <button id="modal-close-easy" class="close-modal easy">Easy</button><button id="modal-close-medium" class="close-modal medium">Medium</button><button id="modal-close-hard" class="close-modal hard">Hard</button>
 
         `;
-
     
     document.getElementById('modal-close-easy').addEventListener('click', function() {
             document.getElementById('myModal').style.display = 'none';

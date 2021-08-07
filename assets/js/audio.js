@@ -23,6 +23,9 @@ function deckShufflePlay() {
 function playAnimalSounds (animalName){
     animalAudio = new Audio(`assets/audio/${animalName}.mp3`);
     animalAudio.play();
+    setTimeout(function(){
+        animalAudio.pause();
+    }, 2000);
 }
 
 function cardTurnOver () {
@@ -43,4 +46,8 @@ function wrongMatch () {
         wrongCard.currentTime = 0;
         wrongCard.play();
     }
+}
+
+function soundPause(){
+
 }
