@@ -12,15 +12,16 @@
 
 </head>
 <body>
+
     <!-- The Modals -->
     <!--Welcome & rules modal-->
     <div id="welcome-modal-box" class="modal">
         <!--Modal content-->
         <div id="welcome-modal" class="fade">
-            <h2>Welcome to <strong>Animal Pairs!</strong></h2>
-            <h3>How to Play <button class="sound-button"><i class="fas fa-music"></i></button></h3>
+            <h2>Welcome to Animal Pairs!</h2>
+            <div id="welcome-sound-button"><button class="sound-button"><i class="fas fa-volume-up"></i></button></div>
+            <h3>How to Play </h3>
             <p>The aim of the game is to match all the cards.<br>
-            You can select your level of difficulty using the difficulty buttons.<br>
             When you select a card, it turns over to reveal an animal.<br>
             Select another card to see if the new animal matches the one already shown.<br>
             When you have successfully matched all the pairs your score and time will be displayed.<br>
@@ -31,6 +32,7 @@
             <button id="welcome-modal-close-hard" class="close-modal hard">Hard</button>
         </div>
     </div>
+
     <!-- Congratulations modal -->
     <div id="myModal">
       <!-- Modal content -->
@@ -43,6 +45,7 @@
       </div>
     </div>
 
+    <!--Sound controls modal-->
     <div id="sounds-modal-box">
         <div id="sounds-modal-content">
             <div>
@@ -50,14 +53,14 @@
             </div>
             <div>
                 <label for="volume-slider"><h3>Volume: </h3></label>
-                <input type="range" min="0" max="100" value="50" name="volume-slider">
+                <input type="range" min="0" max="100" value="50" id="volume-slider" name="volume-slider">
             </div>
             <div>
                 <h3>Sound: </h3>
                 <div class="mid">
     
                     <label class="rocker">
-                      <input type="checkbox" checked>
+                      <input id="sound-toggle" type="checkbox" checked>
                       <span class="switch-left">On</span>
                       <span class="switch-right">Off</span>
                     </label>
@@ -87,10 +90,10 @@
             <span id="score"></span>
         </div>
         <div class="info-holder">
-            <span id="timer">0 minutes 5 seconds</span>
+            <span id="timer"></span>
         </div>
         <div id="sound-controls" class="info-holder">
-            <button class="sound-button"><i class="fas fa-music"></i></button>
+            <button class="sound-button"><i class="fas fa-volume-up"></i></button>
         </div>
     </div>
 

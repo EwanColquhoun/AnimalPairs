@@ -38,7 +38,7 @@ for (var a=0; a<easyPairs.length; a++){
 
 function welcomeMessage() {
     
-    document.querySelector("#welcome-modal-box").addEventListener('click', function( ){
+    document.querySelector("#welcome-modal-box").addEventListener('click', function(){
         document.getElementById('welcome-modal-box').style.display = 'none';
     });
     
@@ -154,7 +154,7 @@ function congratsMessage() {
         <h2>Congratulations!</h2>
         <h3>You completed the game in <span>${timerSpan.textContent}.<br>
         <span id="result"></span><br><i class="fas fa-thumbs-up"></i></span></h3><br>
-        <h2>Choose a difficulty to try again! <i class="fas fa-arrow-down"></i></h2>
+        <h2><i class="fas fa-arrow-down"></i> Choose a difficulty to try again! <i class="fas fa-arrow-down"></i></h2>
         <button id="modal-close-easy" class="close-modal easy">Easy</button><button id="modal-close-medium" class="close-modal medium">Medium</button><button id="modal-close-hard" class="close-modal hard">Hard</button>
 
         `;
@@ -287,6 +287,7 @@ function changeDifficulty() {
 const resetBtn = document.getElementById("reset-game").addEventListener('click', resetGame);
 
 function resetGame() {
+    deckShufflePlay();
     stopTimer();
     resetTimer();
     startGame();
@@ -340,7 +341,7 @@ var timerSpan = document.getElementById("timer"),
     t;
 
 function timerFlash() {
-    if (seconds >= 45) {
+    if (seconds >= 50) {
         timerSpan.classList.add('flash');
     }
 
@@ -358,7 +359,7 @@ function addTime() {
         minutes++;
         }
     
-    timerSpan.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + " Minutes " + (seconds > 9 ? seconds : "0" + seconds) + " Seconds";
+    timerSpan.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + " : " + (seconds > 9 ? seconds : "0" + seconds);
     timer();
     timerFlash();
 }
@@ -371,20 +372,9 @@ function resetTimer() {
     timerSpan.classList.remove('flash', 'long-flash');
     seconds = 0;
     minutes = 0;
-    timerSpan.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + " Minutes " + (seconds > 9 ? seconds : "0" + seconds) + " Seconds";
+    timerSpan.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
 }
 
 function timer() {
     t = setTimeout(addTime, 1000);
 }
-
-/* Stop button 
-stop.onclick = function() {
-    clearTimeout(t);
-}
-
-/* Clear button 
-clear.onclick = function() {
-    timerSpan.textContent = "0 Minutes 0 Seconds";
-    seconds = 0; minutes = 0;
-}*/
