@@ -29,7 +29,7 @@
             <div id="welcome-modal" class="fade">
                 <h2>Welcome to Animal Pairs!</h2>
                 <div id="welcome-sound-button">
-                    <button class="sound-button"><i class="fas fa-volume-up"></i></button>
+                    <button aria-label="Sound settings button" name="Sound-settings-button" class="sound-button"><i class="fas fa-volume-up"></i></button>
                 </div>
                 <h3>How to Play </h3>
                 <p>The aim of the game is to match all the cards.<br>
@@ -38,9 +38,9 @@
                 When you have successfully matched all the pairs your score and time will be displayed.<br>
                 You will then have the option to compete again at a level of your choice!</p>
                 <h3><i class="fas fa-arrow-down"></i> Choose a difficulty to begin! <i class="fas fa-arrow-down"></i></h3>
-                <button id="welcome-modal-close-easy" class="close-modal easy">Easy</button>
-                <button id="welcome-modal-close-medium" class="close-modal medium">Medium</button>
-                <button id="welcome-modal-close-hard" class="close-modal hard">Hard</button>
+                <button aria-label="Easy difficulty button" name="Easy-difficulty-button" class="diff-btn" id="diff-easy">Easy</button>
+                <button aria-label="Medium difficulty button" name="Medium-difficulty-button" class="diff-btn" id="diff-medium">Medium</button>
+                <button aria-label="Hard difficulty button" name="Hard-difficulty-button" class="diff-btn" id="diff-hard">Hard</button>
             </div>
         </div>
 
@@ -50,9 +50,9 @@
             <!-- Modal content -->
             <div id="congrats-modal-content" class="fade rotateIn">
                 <div id="congrats-div">
-                <button id="close-modal-easy" class="close-modal easy">Easy</button>
-                <button id="close-modal-medium" class="close-modal medium">Medium</button>
-                <button id="close-modal-hard" class="close-modal hard">Hard</button>
+                    <button aria-label="Easy difficulty button" name="Easy-difficulty-button" class="diff-btn" id="diff-easy">Easy</button>
+                    <button aria-label="Medium difficulty button" name="Medium-difficulty-button" class="diff-btn" id="diff-medium">Medium</button>
+                    <button aria-label="Hard difficulty button" name="Hard-difficulty-button" class="diff-btn" id="diff-hard">Hard</button>
                 </div>
             </div>
         </div>
@@ -91,16 +91,16 @@
 
             <!-- Rules button -->
             <div id="rules-holder" class="">
-            <button id="rules-button" class="gamebtn">Rules</button>
+            <button aria-label="Rules button" name="Rules-button" id="rules-button" class="gamebtn">Rules</button>
             </div>
 
             <!-- Difficulty dropdown menu -->
             <div id="difficulty-dropdown" class="dropdown">
-                <button class="gamebtn">Difficulty</button>
+                <button aria-label="Difficulty dropdown menu" name="Difficulty-dropdown-menu" class="gamebtn">Difficulty</button>
                 <div class="dropdown-content">
-                    <button class="diff-btn" id="diff-easy">Easy</button>
-                    <button class="diff-btn" id="diff-medium">Medium</button>
-                    <button class="diff-btn" id="diff-hard">Hard</button>
+                    <button aria-label="Easy difficulty button" name="Easy-difficulty-button" class="diff-btn" id="diff-easy">Easy</button>
+                    <button aria-label="Medium difficulty button" name="Medium-difficulty-button" class="diff-btn" id="diff-medium">Medium</button>
+                    <button aria-label="Hard difficulty button" name="Hard-difficulty-button" class="diff-btn" id="diff-hard">Hard</button>
                 </div>
             </div>
         </div>
@@ -120,7 +120,7 @@
 
             <!-- Sound controls button -->
             <div id="sound-controls" class="info-holder">
-                <button class="sound-button"><i class="fas fa-volume-up"></i></button>
+                <button aria-label="Sound settings button" name="sound-setting-button" class="sound-button"><i class="fas fa-volume-up"></i></button>
             </div>
         </div>
 
@@ -133,7 +133,7 @@
 
             <!-- Reset button -->
             <div>
-                <button id="reset-game"><i class="fas fa-undo"></i></button>
+                <button aria-label="Reset button" name="reset-button" id="reset-game"><i class="fas fa-undo"></i></button>
             </div>
         </div>
     </section>

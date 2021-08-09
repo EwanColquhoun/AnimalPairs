@@ -170,7 +170,7 @@ function congratsMessage() {
         <h3>You completed the game in <span>${timerSpan.textContent}.<br>
         <span id="result"></span><br><i class="fas fa-thumbs-up"></i></span></h3><br>
         <h2><i class="fas fa-arrow-down"></i> Choose a difficulty to try again! <i class="fas fa-arrow-down"></i></h2>
-        <button id="modal-close-easy" class="close-modal easy">Easy</button><button id="modal-close-medium" class="close-modal medium">Medium</button><button id="modal-close-hard" class="close-modal hard">Hard</button>
+        <button id="modal-close-easy" aria-label="Easy Difficulty button" name="modal-close-easy-button" class="close-modal easy">Easy</button><button id="modal-close-medium" aria-label="Medium Difficulty button" name="modal-close-medium-button" class="close-modal medium">Medium</button><button id="modal-close-hard" aria-label="Hard Difficulty button" name="modal-close-hard-button" class="close-modal hard">Hard</button>
 
         `;
     
