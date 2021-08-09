@@ -1,5 +1,5 @@
 # *Animal Pairs (WORK IN PROGRESS)*
-An interactive website to help improve the users memory skills. It has a basic memory game incolving matching up pairs of animal images. 
+An interactive website to help improve the user's memory skills. It is a basic memory game involving matching up pairs of animal images. It is aimed at an age of 3 upwards. 
 
 # Contents
 * [**User Experience UX**](<#user-experience-ux>)
@@ -37,24 +37,24 @@ An interactive website to help improve the users memory skills. It has a basic m
 ![Mobile Wireframes](assets/readme-images/mobilewf.png)
 [Back to top](<#contents>)
 ## Site Structure
-Animal Pairs is designed to be simply to use. It has one main page and within that page it has 3 pop-up windows (modals). <br>
-On opening the site you are greeted with Welcome pop-up that describes the rules of the game as well as offering the user a choice of game difficulty in the form of three buttons. Additionally there is a button to link to the sound menu popup. The Welcome pop-up can be accessed at any time via the 'Rules' button.<br>
+Animal Pairs is designed to be simple to use. It has one main page and within that page it has 3 pop-up windows (modals). <br>
+On opening the site you are greeted with the Welcome pop-up that describes the rules of the game as well as offering the user a choice of game difficulty in the form of three buttons. Additionally, there is a button to link to the sound menu popup. The Welcome pop-up can be accessed at any time via the 'Rules' button.<br>
 
-The sound pop-up can be accessed at any time via the volume icon, it has a volume slider and a mute toggle switch.<br>
+The sound menu pop-up can be accessed at any time via the volume icon, it has a volume slider and a mute toggle switch.<br>
 
-The Congratulations pop-up is displayed when the user has completed the game. It shows the score, time taken and gives the user the option ot start again at a difficulty of their choosing. 
+The congratulations pop-up is displayed when the user has completed the game. It shows the score, time taken and gives the user the option to start again at a difficulty of their choosing. 
 
 There is a reset button at the bottom of the deck of cards.
 
 [Back to top](<#contents>)
 ## Design Choices
 * ### Typography
-    * The main heading is 'Fredericka the Great' in the cursive style. This helps the user get an idea as to what the game is about. 
+    * The main heading is 'Fredericka the Great' in the cursive style. This helps the user get an idea as to what the game is about. It is relaxed yet descriptive.
     * The font for the rest of the site is 'Exo' in the san-serif style. It appears informal yet easy to read at all sizes and weights.
 
 [Back to top](<#contents>)
 * ### Colour Scheme
-    * The colour schemes chosen for Animal Pairs were primarily chosen to capture the users eye and imagination. They are bright and vibrant colours to enhance the experience without detracting from the game itself.
+    * The colour schemes chosen for Animal Pairs were primarily chosen to capture the user's eye and imagination. They are bright and vibrant colours to enhance the experience without detracting from the game itself.
 
 Here are some examples of the colours:
 * Main background
@@ -68,23 +68,23 @@ Here are some examples of the colours:
 # Features
 ## Existing Features
 * ### Welcome pop-up
-    * Designed to give the user an introduction to the site and to explain the rules of the game
-    * It has 3 difficulty selector buttons and one sound controls button to open the sound controls pop-up.
-    * To close the welcome pop-up the user needs to click anywhere on the screen.
+    * Designed to give the user an introduction to the site and to explain the rules of the game.
+    * It has 3 difficulty selector buttons and one sound control button to open the sound controls pop-up.
+    * To close the Welcome pop-up the user needs to click anywhere on the screen.
 
 ![Welcome modal](assets/readme-images/welcome-modal.png)
 
 [Back to top](<#contents>)
 * ### Rules and Difficulty selector buttons
     * The Rules and Difficulty buttons are located above the game on the main page.
-    * The rules button allows access to the Welcome pop-up and thus the rules of the game at any stage. 
-    * The difficulty drop down buttons allow the user the vary the level of difficulty. When the desired difficulty is selected the game resets.
+    * The Rules button allows access to the Welcome pop-up and thus the rules of the game at any stage. 
+    * The Difficulty drop down buttons allow the user the vary the level of difficulty. When the desired difficulty is selected the game resets.
 
 ![Rules and Difficulty buttons](assets/readme-images/rules-difficulty.png)
 
 [Back to top](<#contents>)
 * ### Score and timer
-    * The score panel is located below the rules button and above the game on the main page. It displays to the user the amound of pairs they have matched against the maximum possible.
+    * The score panel is located below the rules button and above the game on the main page. It displays to the user the amount of pairs they have matched against the maximum possible.
     * The timer is located to the right of the score panel. It shows the time elapsed since the first card in that game was clicked. After set periods of time it changes its display to reflect the length of time taken, i.e after 2 minutes it turns red!
 
 ![Score and Timer](assets/readme-images/score-timer.png)
@@ -95,7 +95,7 @@ Here are some examples of the colours:
 * ### Sound Controls
     * The game has a variety of sounds to enhance the UX. There are card shuffling sounds, card clicking sounds, card not matching sounds, and when a card is matched the sound that is played matches the animal on the matched cards. 
     * The sound menu controls the volume of the site and gives the user the option to mute the sounds all together. 
-    * The user can access the sound menu from the sounds button on either the welcome pop-up (In the top right corner) or the main game page (next to the timer).
+    * The user can access the sound menu from the sounds button on either the Welcome pop-up (In the top right corner) or the main game page (next to the timer).
 
 ![The sound buttons](assets/readme-images/soundbutton.png)
 ![The sound buttons](assets/readme-images/soundbutton2.png)
@@ -112,7 +112,7 @@ Here are some examples of the colours:
 * ### The Game
     * The game itself is made up of cards that the user has to turn over. The aim is to match two cards together until the whole 'deck' is matched.
     * The amount of cards on the deck depends on the level of difficulty selected. 
-    * There are some basic animations and sounds that interact with the user to enhance the in game user experience and to encourage further use. 
+    * There are some basic animations and sounds that interact with the user to enhance the in-game user experience and to encourage further use. 
     * The below picture depicts the game board with two cards turned over. They are unmatched so will turn back over with a slight delay. 
 ![The Game](assets/readme-images/easy-unmatched.png)
     * The below picture depicts the game with most of the cards matched.
@@ -120,16 +120,16 @@ Here are some examples of the colours:
 
 [Back to top](<#contents>)
 * ### Congratulations pop-up
-    * The congratulations pop-up is shown when the game is complete. 
+    * The Congratulations pop-up is shown when the game is complete. 
     * It displays the time-taken to complete the game. It also shows the score and an interpretation of the score vs moves result.
     * It gives the user the option to recommence the game at a difficulty of their choosing.
-    * To exit the congratulations pop-up the user needs to click anywhere on the screen.
+    * To exit the Congratulations pop-up the user needs to click anywhere on the screen.
 
 ![Congratulations Pop-up](assets/readme-images/congrats-modal.png)
 
 [Back to top](<#contents>)
 ## Future Features
-* The next item for further development would be a score board for the various users once a player name has been inputted.
+* An item for further development would be a score board for the various users once a player name has been inputted.
 
 # Technologies Used
 * [HTML5](https://html.spec.whatwg.org/) - provides the content and structure for the website.
@@ -142,7 +142,7 @@ Here are some examples of the colours:
 
 # Testing
 ## Code Validation
-Animal Pairs has be throughly tested. All the code has been run through the [W3C html Validator](https://validator.w3.org/) and the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). Minor errors were found on the home and inspiration pages. After a fix and retest, no errors were returned for both. 
+Animal Pairs has be throughly tested. All the code has been run through the [W3C html validator](https://validator.w3.org/), the [W3C CSS validator](https://jigsaw.w3.org/css-validator/) and the [JavaScript JSHint validator](https://jshint.com/). The code passed all of the validators once minor points had been corrected.
 
 The HTML validator results are below:
 
@@ -151,6 +151,66 @@ The HTML validator results are below:
 The CSS validator results are below:
 
 ![CSS Validator test result](assets/readme-images/csstesting.png)
+
+The JSHint validator results showed that there were a number of minor errors such as missing semi-colons. It also flagged up that one of the variables had been defined twice. 
+
+## Responsiveness Test
+
+The responsive design tests were carried out manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
+
+|        | Moto G4 | Galaxy S5 | iPhone 5 | iPad | iPad Pro | Display <1200px | Display >1200px |
+|--------|---------|-----------|----------|------|----------|-----------------|-----------------|
+| Render | pass    | pass      | pass     | pass | pass     | pass            | pass            |
+| Images | pass    | pass      | pass     | pass | pass     | pass            | pass            |
+| Links  | pass    | pass      | pass     | pass | pass     | pass            | pass            |
+
+## Browser Compatibility
+
+Animal Pairs was tested on the following browsers with no visible issues for the user. 
+Google Chrome, Microsoft Edge, Safari and Mozilla Firefox. Appearance, functionality and responsiveness were consistent throughout for a range of device sizes and browsers.
+
+## Testing User Stories
+* As a user I want to know the rules.
+    * On the **Welcome** pop-up there is a discription of the game and the rules involved. This can be accessed anytime with the **'Rules'** button.
+    
+    <br>
+* As a user I want to know my score.
+    * Once the game is completed the **Congratulations** pop-up displays the result. Either excellent, good or it gives some helpful advice for next time.
+    
+    <br>
+* As a user I want to know how long it has taken me to complete the game.
+    * There is a **timer** visible above the 'deck' of cards. Once the game has completed the Congratulations pop-up has the final time displayed.
+    
+    <br>
+* As a user I want to know when I have finished.
+    * When all the cards are matched the **Congratulations** pop-up is displayed. Above the 'deck' there is also a tally of the pairs found and the maximum amount of pairs available.
+    
+    <br>
+* As a user I want to reset the game if I want another attempt.
+    * There are many ways to reset the game. The **reset button** at the bottom of the 'deck'. The difficulty buttons on the main page or the through the 'Rules' button and the Welcome pop-up.
+    
+    <br>
+* As a user I want to make the game easier or harder to suit my skill level.
+    * The level of challenged in this game is determined by the amount of cards in the 'deck'. This can be changed using the **'Difficulty'** dropdown menu. The 'deck' size varies between 12 cards (on easy) to 20 cards (on hard).
+
+## Additional Testing
+### Lighthouse
+The site was also tested using [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome Developer Tools to test each of the pages for:
+* Performance - How the page performs whilst loading.
+* Accessibility - Is the site acccessible for all users and how can it be improved.
+* Best Practices - Site conforms to industry best practices.
+* SEO - Search engine optimisation. Is the site optimised for search engine result rankings.
+
+As an example the results for Wawas Woods home page are below:
+![Lighthouse test results](assets/readme-images/testing.png)
+
+This part of the testing process showed up that the site was slow to load, mainly due to the image sizes. All the images needed to be compressed before adding to the repository. Once this was done the performance went from ~60% to ~90%. 
+
+### Peer review
+In addition to the above testing the beta version of the site was put through its paces by peers, both in the software development field and outside. The results highlighted responsive design weakness for a type of mobile device that was rectified with minor CSS amendments. There were also minor spelling and grammar errors that have since been fixed.
+
+
+
 
 
 

@@ -23,7 +23,7 @@ function deckShufflePlay() {
  * animal sound is played for specific animal matches. Again checks volume and plays sound. 
  */
 function playAnimalSounds (animalName){
-    animalAudio = new Audio(`assets/audio/${animalName}.mp3`);
+    let animalAudio = new Audio(`assets/audio/${animalName}.mp3`);
     setTimeout(function(){
         animalAudio.pause();
     },2000);
