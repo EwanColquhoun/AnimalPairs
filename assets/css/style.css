@@ -73,7 +73,7 @@ html, body {
   right: 63px;
 }
 
-#myModal {
+#congrats-modal {
   display: none;
   position: fixed;
   z-index: 2;
