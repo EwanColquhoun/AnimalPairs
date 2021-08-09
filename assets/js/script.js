@@ -20,9 +20,6 @@ var animalName;
 
 //Timer variables
 var timerSpan = document.getElementById("timer"),
-    start = document.getElementById('start'),
-    stop = document.getElementById('stop'),
-    clear = document.getElementById('clear'),
     seconds = 0, minutes = 0,
     t;
 
@@ -91,12 +88,12 @@ function handleClick(){
             if (openCard === openedCards[0]) {
                 match(); 
                 checkDataMatch(cardsNum);
-                var cardsNum = '';
+                cardsNum = '';
             } else {
                 wrongMatch();
                 unMatched();
             }
-        };
+        }
         stopGame();
         });
     });
@@ -114,7 +111,7 @@ function startGame() {
     changeDifficulty();
     showRules();
     showSound();
-};
+}
 
 /**Called when all the cards are shown. This function check that the maximum amount of pairs has been achieved.
  * It stops the timer, and calls the functions to show the congratulations modal.
@@ -204,17 +201,16 @@ function congratsMessage() {
  */
 function match() {
     match.called = true;
-    moves++
+    moves++;
     numMatch++;
     openedCards = [];
     increaseScore();
   
     document.querySelectorAll(".show").forEach((matchedCard) => {
-      matchedCard.classList.add('match','animated','flipInX')
-      matchedCard.classList.remove('show')
+      matchedCard.classList.add('match','animated','flipInX');
+      matchedCard.classList.remove('show');
     });
-  
-};
+}
   
 
   /**Adds one to the moves. For each card that isn't matched but shown it adds some classes to reflect unmatched animation
@@ -222,7 +218,7 @@ function match() {
    */
 function unMatched() {
     unMatched.called = true;
-    moves++
+    moves++;
     openedCards = [];
   
     document.querySelectorAll(".show:not(.match)").forEach((unmatchedCard) => {
@@ -231,9 +227,9 @@ function unMatched() {
         setTimeout(function() {
           unmatchedCard.classList = 'card';
         }, 900);
-      })
+      });
     });
-};
+}
 
 /**Function changes the innerHTML of the deck of cards to reflect the level of difficulty selected.
  * Easy = 12 cards.
@@ -247,9 +243,9 @@ function showEasy(){
     shuffle(easyPairs);
     for (var a=0; a<easyPairs.length; a++){
         document.querySelector('.deck').innerHTML += `<li class="card" data-ref="${easyPairs[a]}"><img src="assets/images/${easyPairs[a]}.jpg" alt="A picture of a ${easyPairs[a]}"/></li>`;
-    };
+    }
     cardsNum = document.getElementById('deck').childElementCount/2;
-    score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
+    score.innerHTML = `Pairs ${numMatch}/${cardsNum}`;
     handleClick();
 }
 
@@ -265,9 +261,9 @@ function showMedium(){
     shuffle(mediumPairs);
         for (var a=0; a<mediumPairs.length; a++){
             document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${mediumPairs[a]}.jpg" alt="A picture of a ${mediumPairs[a]}"/></li>`;
-    };
+    }
     cardsNum = document.getElementById('deck').childElementCount/2;
-    score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
+    score.innerHTML = `Pairs ${numMatch}/${cardsNum}`;
     handleClick();
 }
 
@@ -282,9 +278,9 @@ function showHard(){
     shuffle(hardPairs);
         for (var a=0; a<hardPairs.length; a++){
             document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${hardPairs[a]}.jpg" alt="A picture of a ${hardPairs[a]}"/></li>`;
-    };
+    }
     cardsNum = document.getElementById('deck').childElementCount/2;
-    score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
+    score.innerHTML = `Pairs ${numMatch}/${cardsNum}`;
     handleClick();
 }
 
@@ -293,7 +289,7 @@ function showHard(){
  */
 function checkDataMatch(cardsNum){
     if(match){
-        animalName = cardsNum.charAt(24)
+        animalName = cardsNum.charAt(24);
         playAnimalSounds(animalName);
     } else {
         return;
@@ -348,7 +344,7 @@ function shuffle(array) {
 
 /**When called it increases the score displayed on the screen. */
 function increaseScore() {
-        score.innerHTML = `Pairs ${numMatch}/${maxPairs}`    
+        score.innerHTML = `Pairs ${numMatch}/${maxPairs}`;
 }
 
 /**Changes the content of the results span depending on how many moves were taken to complete the game */
