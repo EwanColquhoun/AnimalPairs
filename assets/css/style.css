@@ -15,12 +15,7 @@ html, body {
     font-family: 'Exo', sans-serif;
 }
 
-*,
-*::before,
-*::after {
-	box-sizing: inherit;
-}
-
+/* Welcome modal */
 #welcome-modal-box {
   z-index: 10;
   position: fixed;
@@ -54,11 +49,6 @@ html, body {
   font-size: larger;
 }
 
-.rotateIn {
-  animation: rotateIn;
-  animation-duration: 1s;
-}
-
 #welcome-modal p {
   padding: 13px 15px;
 }
@@ -73,6 +63,7 @@ html, body {
   right: 63px;
 }
 
+/* Congratulations modal */
 #congrats-modal {
   display: none;
   position: fixed;
@@ -84,53 +75,11 @@ html, body {
   background-color: rgba(119, 119, 119, 0.63);
 }
 
-#sounds-modal-box {
-  display: none;
-  position: fixed;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0%;
-  background-color: rgba(119, 119, 119, 0.63);
-}
-
-#sounds-modal-content {
-  display: flex;
-  width: 500px;
-  max-width: 90%;
-  height: 300px;
-  position: absolute;
-  top: 0%;
-  bottom: 0%;
-  left: 0%;
-  right: 0%;
-  margin: auto;
-  z-index: 5;
-  background-image: linear-gradient(to right bottom, #5ffbf1, #46eefa, #41dfff, #52cffe, #69bff8, #79b3f4, #8aa7ec, #9a9ae1, #aa8fd8, #ba83ca, #c777b9, #d16ba5);
-  background-color: #f52179e6;
-  transition: 700ms;
-  border-radius: 50px;
-  animation: backInLeft;
-  animation-duration: 1s;
-  flex-direction: column;
-  align-content: center;
-  justify-content: space-evenly;
-}
-
-#sounds-modal-content div {
-  text-align: center;
-}
-
-.fade {
-  transition: transform .3s ease-in;
-}
-
 #congrats-modal-content {
   display: block;
   max-width: 700px;
   width: 700px;
-  height: 500px;
+  height: 450px;
   position: absolute;
   top: 0%;
   bottom: 0%;
@@ -163,6 +112,7 @@ html, body {
   font-size: larger;
 }
 
+/* Close modal buttons */
 .close-modal {
   width: 120px;
   height: 55px;
@@ -177,18 +127,51 @@ html, body {
   background-image: radial-gradient(circle, #00c9a7, #00d2a7, #00daa6, #00e3a3, #12eba0);
 }
 
-.close-modal:hover {
-  background-color: darkviolet;
-  color: whitesmoke;
+/* Sounds modal */
+#sounds-modal-box {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0%;
+  background-color: rgba(119, 119, 119, 0.63);
 }
 
+#sounds-modal-content {
+  display: flex;
+  width: 500px;
+  max-width: 90%;
+  height: 300px;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  margin: auto;
+  z-index: 5;
+  background-image: linear-gradient(to right bottom, #5ffbf1, #46eefa, #41dfff, #52cffe, #69bff8, #79b3f4, #8aa7ec, #9a9ae1, #aa8fd8, #ba83ca, #c777b9, #d16ba5);
+  background-color: #f52179e6;
+  transition: 700ms;
+  border-radius: 50px;
+  animation: backInLeft;
+  animation-duration: 1s;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+/* The Game */
 h1 {
-    text-align: center;
-    margin: 30px;
-    font-size: 100px;
-    font-family: 'Fredericka the Great', cursive;
+  text-align: center;
+  margin: 30px;
+  font-size: 100px;
+  font-family: 'Fredericka the Great', cursive;
 }
 
+/* The Game - Rules, score, timer and difficulty buttons */
 #game-data {
   text-align: center;
   width: 40%;
@@ -199,13 +182,13 @@ h1 {
 }
 
 #game-holder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: fit-content;
-    margin: 0 auto;
-    clear: both;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: fit-content;
+  margin: 0 auto;
+  clear: both;
 }
 
 #deck-info-holder {
@@ -218,19 +201,10 @@ h1 {
   margin-top: 25px;
 }
 
-#rules-holder {
-  float: left;
-}
-
 .info-holder {
-    width: 30%;
-    text-align: center;
-    font-size: larger;
-}
-
-.float {
-  float: left;
-  margin: 0 auto;
+  width: 30%;
+  text-align: center;
+  font-size: larger;
 }
 
 .sound-button {
@@ -239,20 +213,68 @@ h1 {
   font-size: 1.5em;
 }
 
-.sound-button :hover {
-  transform: scale(1.4, 1.4);
+#score, #timer {
+  font-size: larger;
 }
 
+/* Dropdown button inspiration from https://www.w3schools.com/css/css_dropdowns.asp */
+/* Styles The Dropdown Button */
+#difficulty-dropdown {
+  float:left;
+  position: relative;
+}
+
+.gamebtn {
+  background-color: #B04571;
+  color: white;
+  padding: 5px;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 50%);
+  font-family: inherit;
+  border-radius: 10px;
+}
+  
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+  
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0px;
+  background-color: #f9f9f9;
+  width: 132px;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 50%);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content button {
+  color: black;
+  background-color: cornsilk;
+  padding: 12px 0px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  font-size: large;
+}
+
+/* The Deck */
 .deck {
-    padding: 1rem;
-    border-radius: 4px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 50px;
-    list-style-type: none;
+  padding: 1rem;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  list-style-type: none;
 }
 
 .easy-deck {
@@ -263,18 +285,14 @@ h1 {
   max-width: 760px;
 }
 
-#score, #timer {
-  font-size: larger;
-}
-
 .card {
   height: 125px;
   width: 125px;
   margin: 1.2rem 0.2rem;
-  background-image: url("assets/images/dog-paw.png");
+  background-image: url('/assets/images/birdie.png');
   background-position: center center;
   background-size: contain;
-  background-color: lightblue;
+  background-color: antiquewhite;
   font-size: 0;
   color: #ffffff;
   border-radius: 5px;
@@ -295,219 +313,15 @@ h1 {
     border-radius: 5px;
 }
 
-.flipInY {
-  animation: flipInY 500ms;
-}
-
-.flipInX {
-  animation: flipInX 500ms;
-}
-
-.shake {
-  animation: shakeX 1s;
-  animation-delay: 200ms;
-}
-
-.flash {
-  color: #FFC745;
-  background-color: #005453;
-  border-radius: 5px;
-}
-
-.long-flash {
-  color: #FF1100;
-  background: black;
-  border-radius: 5px;
-  transform: scale(1.5, 1.5);
-  animation: flash;
-  animation-duration: 1.2s; 
-  animation-iteration-count: infinite;
-
-}
-
-/*TESTING DISPLAY NONE should be block*/
 .card.match img {
-    display:block;
+  display:block;
 }
 
 .card.hide img {
-  display: none;
+display: none;
 }
 
-/* Dropdown button inspiration from https://www.w3schools.com/css/css_dropdowns.asp */
-/* Style The Dropdown Button */
-#difficulty-dropdown {
-  float:left;
-  position: relative;
-}
-
-.gamebtn {
-    background-color: #B04571;
-    color: white;
-    padding: 5px;
-    font-size: 25px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 50%);
-    font-family: inherit;
-    border-radius: 10px;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0px;
-    background-color: #f9f9f9;
-    width: 132px;
-    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 50%);
-    z-index: 1;
-
-  }
-  /* Links inside the dropdown */
-  .dropdown-content button {
-    color: black;
-    padding: 12px 0px;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    font-size: large;
-  }
-
-  /* Change color of dropdown links on hover */
-  .diff-btn:hover {
-    background-color: #e7c8c8}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-  }
-
-#reset-game {
-    font-size: 300%;
-    background-color: transparent;
-    animation: pulse 1s infinite;
-    margin-top: 15px;
-}
-
-#reset-game:hover {
-  animation: rotateIn 1s;
-}
-
-footer {
-  height: 30px;
-  width: 100vw;
-  position: relative;
-  text-align: center;
-  line-height: 2em;
-  margin: 120px auto;
-}
-
-#social-media a {
-  color: black;
-  font-size: larger;
-  padding: 5px 15px;
-}
-
-@media (max-width: 1100px) {
-  #welcome-modal {
-    width: 80%;
-  }
-}
-
-@media (max-width: 800px) {
-  #congrats-div {
-    font-size: smaller;
-  }
-
-  #close-modal {
-    width: 150px;
-    height: 50px;
-    font-size: 2.3em;
-    margin: 60px auto;
-  }
-
-  #deck-info-holder {
-    float: none;
-    width: 80%;
-  }
-
-  #game-data {
-    width: 70%;
-  }
-
-  #welcome-modal {
-    font-size: initial;
-  }
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 4em;
-  }
-
-  #congrats-modal-content {
-    width: 100%;
-    left: 0%;
-    top: 10%;
-    transform: none;
-  }
-
-  #score, #timer {
-    font-size: initial;
-  }
-
-  .card img {
-    width:  80px;
-  }
-
-  .card {
-    width: 80px;
-    height: 80px;
-  }
-
-  .narrow {
-    min-width: 360px;
-    max-width: 420px;
-    padding: 0px;
-  }
-
-  #deck-info-holder {
-    width: 100%;
-  }
-
-  .card {
-    margin: 0.2rem 0.2rem;
-  }
-
-  #welcome-modal {
-    width: 100%;
-    line-height: initial;
-    height: 545px;
-  }
-
-  #welcome-sound-button {
-    top: 45px;
-  }
-
-  #rules-button, #difficulty-dropdown button {
-    font-size: smaller;
-    
-  }
-}
-
-/*sound toggle */
+/*sound toggle switch*/
 .mid {
   display: flex;
   align-items: center;
@@ -515,19 +329,10 @@ footer {
   padding-top:1em;
 }
 
-
-/* Switch starts here */
+/* Sound toggle switch inspired by - source: https://codepen.io/marcusconnor/pen/QJNvMa */
 .rocker {
   display: inline-block;
   position: relative;
-  /*
-  SIZE OF SWITCH
-  ==============
-  All sizes are in em - therefore
-  changing the font-size here
-  will change the size of the switch.
-  See .rocker-small below as example.
-  */
   font-size: 1em;
   font-weight: bold;
   text-align: center;
@@ -636,7 +441,7 @@ input:checked + .switch-left + .switch-right::before {
   background-color: #ccc;
 }
 
-/* Keyboard Users */
+/* Sound toggle switch adaptations for Keyboard Users */
 input:focus + .switch-left {
   color: #333;
 }
@@ -651,4 +456,184 @@ input:focus + .switch-left + .switch-right {
 
 input:checked:focus + .switch-left + .switch-right {
   color: #333;
+}
+
+/* Reset button */
+#reset-game {
+  font-size: 300%;
+  background-color: transparent;
+  animation: pulse 1s infinite;
+  margin-top: 15px;
+}
+
+/* Psudo classes */
+.close-modal:hover {
+  background-color: darkviolet;
+  color: whitesmoke;
+}
+
+.sound-button :hover {
+  transform: scale(1.4, 1.4);
+}
+
+.diff-btn:hover {
+  background-color: #e7c8c8;
+}
+
+#reset-game:hover {
+  animation: rotateIn 1s;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .gamebtn {
+  background-color: #3e8e41;
+}
+
+/* Animations/Transitions */
+.float {
+  float: left;
+  margin: 0 auto;
+}
+
+.fade {
+  transition: transform .3s ease-in;
+}
+
+.flipInY {
+  animation: flipInY 500ms;
+}
+
+.flipInX {
+  animation: flipInX 500ms;
+}
+
+.shake {
+  animation: shakeX 1s;
+  animation-delay: 200ms;
+}
+
+.flash {
+  color: #FFC745;
+  background-color: #005453;
+  border-radius: 5px;
+}
+
+.long-flash {
+  color: #FF1100;
+  background: black;
+  border-radius: 5px;
+  transform: scale(1.5, 1.5);
+  animation: flash;
+  animation-duration: 1.2s; 
+  animation-iteration-count: infinite;
+}
+
+/* Footer */
+footer {
+  height: 30px;
+  width: 100vw;
+  position: relative;
+  text-align: center;
+  line-height: 2em;
+  margin: 120px auto;
+}
+
+#social-media a {
+  color: black;
+  font-size: larger;
+  padding: 5px 15px;
+}
+
+/* Media queries for large and medium screens below width of 1100px*/
+@media screen and (max-width: 1100px) {
+  #welcome-modal {
+    width: 80%;
+  }
+}
+
+/* Media queries for medium to small screens with a max width of 900px*/
+@media screen and (max-width: 800px) {
+  #congrats-div {
+    font-size: smaller;
+  }
+
+  #close-modal {
+    width: 150px;
+    height: 50px;
+    font-size: 2.3em;
+    margin: 60px auto;
+  }
+
+  #deck-info-holder {
+    float: none;
+    width: 80%;
+  }
+
+  #game-data {
+    width: 70%;
+  }
+
+  #welcome-modal {
+    font-size: initial;
+  }
+}
+
+/* Media queries for small screens with a max width of 600px*/
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 4em;
+  }
+
+  #congrats-modal-content {
+    width: 100%;
+    left: 0%;
+    top: 10%;
+    transform: none;
+  }
+
+  #score, #timer {
+    font-size: initial;
+  }
+
+  .card img {
+    width:  80px;
+  }
+
+  .card {
+    width: 80px;
+    height: 80px;
+  }
+
+  .narrow {
+    min-width: 360px;
+    max-width: 420px;
+    padding: 0px;
+  }
+
+  #deck-info-holder {
+    width: 100%;
+  }
+
+  .card {
+    margin: 0.2rem 0.2rem;
+  }
+
+  #welcome-modal {
+    width: 100%;
+    line-height: initial;
+    height: 545px;
+  }
+
+  #welcome-sound-button {
+    top: 45px;
+  }
+
+  #rules-button, #difficulty-dropdown button {
+    font-size: smaller;
+  }
 }

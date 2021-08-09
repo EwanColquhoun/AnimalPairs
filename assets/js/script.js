@@ -86,7 +86,6 @@ function handleClick(){
         card.classList.add('show', 'animated', 'flipInY');
         let openCard = card.innerHTML;
         openedCards.push(openCard);
-        console.log(openedCards);
         var cardsNum = openedCards.toString(); 
         if (openedCards.length > 1){
             if (openCard === openedCards[0]) {

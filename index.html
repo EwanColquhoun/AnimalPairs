@@ -4,20 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animal Pairs</title>
+    <meta name="description" content="Animal Pairs memory game for all ages">
+    <meta name="keywords" content="animals, memory game, pairs, interactive game, toddler games, javascript game">
 
+    <!-- Link to CSS Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--Link to AnimateCSS library-->
+    <!-- Link to AnimateCSS library -->
     <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Favicon link -->
+    <link rel="icon" href="assets/images/birdie.png" type="image/png">
+
+    <title>Animal Pairs</title>
 
 </head>
 <body>
 
     <!-- The Modals -->
     <section>
+
         <!--Welcome & rules modal-->
         <div id="welcome-modal-box" class="modal">
-            <!--Modal content-->
+
+            <!-- Modal content -->
             <div id="welcome-modal" class="fade">
                 <h2>Welcome to Animal Pairs!</h2>
                 <div id="welcome-sound-button">
@@ -38,6 +46,7 @@
 
         <!-- Congratulations modal -->
         <div id="congrats-modal">
+
             <!-- Modal content -->
             <div id="congrats-modal-content" class="fade rotateIn">
                 <div id="congrats-div">
@@ -73,15 +82,19 @@
         </div>
     </section>
 
-    <!--The game-->
+    <!-- The Game -->
     <section>
         <h1>Animal Pairs</h1>
 
-        <!--Rules and Difficulty buttons-->
+        <!-- Rules and Difficulty buttons -->
         <div id="game-data">
+
+            <!-- Rules button -->
             <div id="rules-holder" class="">
             <button id="rules-button" class="gamebtn">Rules</button>
             </div>
+
+            <!-- Difficulty dropdown menu -->
             <div id="difficulty-dropdown" class="dropdown">
                 <button class="gamebtn">Difficulty</button>
                 <div class="dropdown-content">
@@ -92,21 +105,29 @@
             </div>
         </div>
 
-        <!--Score, timer display and sound button-->
+        <!-- Score, timer display and sound button -->
         <div id="deck-info-holder" class="">
+
+            <!-- Score -->
             <div class="info-holder">
                 <span id="score"></span>
             </div>
+
+            <!-- Timer -->
             <div class="info-holder">
                 <span id="timer"></span>
             </div>
+
+            <!-- Sound controls button -->
             <div id="sound-controls" class="info-holder">
                 <button class="sound-button"><i class="fas fa-volume-up"></i></button>
             </div>
         </div>
 
-        <!--Deck-->
+        <!-- Deck -->
         <div id="game-holder">
+
+            <!-- Cards -->
             <ul id="deck" class="deck narrow">
                 <li class="card"><img src="assets/images/cow.jpg"></li>
                 <li class="card"><img src="assets/images/dolphin.jpg"></li>
@@ -121,14 +142,15 @@
                 <li class="card"><img src="assets/images/eagle.jpg"></li>
                 <li class="card"><img src="assets/images/snake.jpg"></li>
             </ul>
-            <!--Reset button-->
+
+            <!-- Reset button -->
             <div>
                 <button id="reset-game"><i class="fas fa-undo"></i></button>
             </div>
         </div>
     </section>
 
-    <!--Footer-->
+    <!-- Footer -->
     <section>
         <footer>
             <span id="social-media">
@@ -138,7 +160,7 @@
         </footer>
     </section>
 
-    <!--Font Awesome and Script links-->
+    <!-- Font Awesome and Script links -->
     <script src="https://kit.fontawesome.com/48b20a3378.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/audio.js"></script>
