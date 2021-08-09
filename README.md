@@ -141,6 +141,17 @@ Here are some examples of the colours:
 * [AnimateCss](https://animate.style/) - Library used to help with the animations on all devices.
 
 # Testing
+## Code Validation
+Animal Pairs has be throughly tested. All the code has been run through the [W3C html Validator](https://validator.w3.org/) and the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). Minor errors were found on the home and inspiration pages. After a fix and retest, no errors were returned for both. 
+
+The HTML validator results are below:
+
+![W3C Validator test result](assets/readme-images/w3ctesting.png)
+
+The CSS validator results are below:
+
+![CSS Validator test result](assets/readme-images/csstesting.png)
+
 
 
 # Deployment

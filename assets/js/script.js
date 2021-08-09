@@ -246,7 +246,7 @@ function showEasy(){
     document.querySelector('#deck').classList.remove('hard-deck');
     shuffle(easyPairs);
     for (var a=0; a<easyPairs.length; a++){
-        document.querySelector('.deck').innerHTML += `<li class="card" data-ref="${easyPairs[a]}"><img src="assets/images/${easyPairs[a]}.jpg"/></li>`;
+        document.querySelector('.deck').innerHTML += `<li class="card" data-ref="${easyPairs[a]}"><img src="assets/images/${easyPairs[a]}.jpg" alt="A picture of a ${easyPairs[a]}"/></li>`;
     };
     cardsNum = document.getElementById('deck').childElementCount/2;
     score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
@@ -264,7 +264,7 @@ function showMedium(){
     document.querySelector('#deck').classList.remove('hard-deck');
     shuffle(mediumPairs);
         for (var a=0; a<mediumPairs.length; a++){
-            document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${mediumPairs[a]}.jpg"/></li>`;
+            document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${mediumPairs[a]}.jpg" alt="A picture of a ${mediumPairs[a]}"/></li>`;
     };
     cardsNum = document.getElementById('deck').childElementCount/2;
     score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
@@ -281,7 +281,7 @@ function showHard(){
     document.querySelector('#deck').classList.add('hard-deck');
     shuffle(hardPairs);
         for (var a=0; a<hardPairs.length; a++){
-            document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${hardPairs[a]}.jpg"/></li>`;
+            document.querySelector('.deck').innerHTML += `<li class="card"><img src="assets/images/${hardPairs[a]}.jpg" alt="A picture of a ${hardPairs[a]}"/></li>`;
     };
     cardsNum = document.getElementById('deck').childElementCount/2;
     score.innerHTML = `Pairs ${numMatch}/${cardsNum}`
