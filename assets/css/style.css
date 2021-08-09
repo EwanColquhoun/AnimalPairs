@@ -177,12 +177,7 @@ html, body {
   background-image: radial-gradient(circle, #00c9a7, #00d2a7, #00daa6, #00e3a3, #12eba0);
 }
 
-#congrats-div button :hover {
-  background-color: darkviolet;
-  color: whitesmoke;
-}
-
-#welcome-modal button :hover {
+.close-modal:hover {
   background-color: darkviolet;
   color: whitesmoke;
 }
@@ -238,13 +233,14 @@ h1 {
   margin: 0 auto;
 }
 
-#sound-controls i, #welcome-modal i {
-  font-size: 2em;
-  background-color: transparent;
-}
-
 .sound-button {
   background-color: transparent;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.sound-button :hover {
+  transform: scale(1.4, 1.4);
 }
 
 .deck {

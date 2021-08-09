@@ -14,120 +14,131 @@
 <body>
 
     <!-- The Modals -->
-    <!--Welcome & rules modal-->
-    <div id="welcome-modal-box" class="modal">
-        <!--Modal content-->
-        <div id="welcome-modal" class="fade">
-            <h2>Welcome to Animal Pairs!</h2>
-            <div id="welcome-sound-button"><button class="sound-button"><i class="fas fa-volume-up"></i></button></div>
-            <h3>How to Play </h3>
-            <p>The aim of the game is to match all the cards.<br>
-            When you select a card, it turns over to reveal an animal.<br>
-            Select another card to see if the new animal matches the one already shown.<br>
-            When you have successfully matched all the pairs your score and time will be displayed.<br>
-            You will then have the option to compete again at a level of your choice!</p>
-            <h3><i class="fas fa-arrow-down"></i> Choose a difficulty to begin! <i class="fas fa-arrow-down"></i></h3>
-            <button id="welcome-modal-close-easy" class="close-modal easy">Easy</button>
-            <button id="welcome-modal-close-medium" class="close-modal medium">Medium</button>
-            <button id="welcome-modal-close-hard" class="close-modal hard">Hard</button>
-        </div>
-    </div>
-
-    <!-- Congratulations modal -->
-    <div id="congrats-modal">
-      <!-- Modal content -->
-      <div id="congrats-modal-content" class="fade rotateIn">
-        <div id="congrats-div">
-            <button id="close-modal-easy" class="close-modal easy">Easy</button>
-            <button id="close-modal-medium" class="close-modal medium">Medium</button>
-            <button id="close-modal-hard" class="close-modal hard">Hard</button>
-        </div>
-      </div>
-    </div>
-
-    <!--Sound controls modal-->
-    <div id="sounds-modal-box">
-        <div id="sounds-modal-content">
-            <div>
-                <h2>Sound Controls</h2>
-            </div>
-            <div>
-                <label for="volume-slider"><h3>Volume: </h3></label>
-                <input type="range" min="0" max="100" value="50" id="volume-slider" name="volume-slider">
-            </div>
-            <div>
-                <h3>Sound: </h3>
-                <div class="mid">
-    
-                    <label class="rocker">
-                      <input id="sound-toggle" type="checkbox" checked>
-                      <span class="switch-left">On</span>
-                      <span class="switch-right">Off</span>
-                    </label>
-                  
-                  </div>
+    <section>
+        <!--Welcome & rules modal-->
+        <div id="welcome-modal-box" class="modal">
+            <!--Modal content-->
+            <div id="welcome-modal" class="fade">
+                <h2>Welcome to Animal Pairs!</h2>
+                <div id="welcome-sound-button">
+                    <button class="sound-button"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <h3>How to Play </h3>
+                <p>The aim of the game is to match all the cards.<br>
+                When you select a card, it turns over to reveal an animal.<br>
+                Select another card to see if the new animal matches the one already shown.<br>
+                When you have successfully matched all the pairs your score and time will be displayed.<br>
+                You will then have the option to compete again at a level of your choice!</p>
+                <h3><i class="fas fa-arrow-down"></i> Choose a difficulty to begin! <i class="fas fa-arrow-down"></i></h3>
+                <button id="welcome-modal-close-easy" class="close-modal easy">Easy</button>
+                <button id="welcome-modal-close-medium" class="close-modal medium">Medium</button>
+                <button id="welcome-modal-close-hard" class="close-modal hard">Hard</button>
             </div>
         </div>
-    </div>
 
-    <h1>Animal Pairs</h1>
-    <div id="game-data">
-        <div id="rules-holder" class="">
-        <button id="rules-button" class="gamebtn">Rules</button>
-        </div>
-        <div id="difficulty-dropdown" class="dropdown">
-            <button class="gamebtn">Difficulty</button>
-            <div class="dropdown-content">
-                <button clicked = true class="diff-btn" id="diff-easy">Easy</button>
-                <button clicked = true class="diff-btn" id="diff-medium">Medium</button>
-                <button clicked = true class="diff-btn" id="diff-hard">Hard</button>
+        <!-- Congratulations modal -->
+        <div id="congrats-modal">
+            <!-- Modal content -->
+            <div id="congrats-modal-content" class="fade rotateIn">
+                <div id="congrats-div">
+                <button id="close-modal-easy" class="close-modal easy">Easy</button>
+                <button id="close-modal-medium" class="close-modal medium">Medium</button>
+                <button id="close-modal-hard" class="close-modal hard">Hard</button>
                 </div>
             </div>
-    </div>
+        </div>
 
-    <div id="deck-info-holder" class="">
-        <div class="info-holder">
-            <span id="score"></span>
+    <!--Sound controls modal-->
+        <div id="sounds-modal-box">
+            <!--Modal content-->
+            <div id="sounds-modal-content">
+                <div>
+                    <h2>Sound Controls</h2>
+                </div>
+                <div>
+                    <label for="volume-slider"><h3>Volume: </h3></label>
+                    <input type="range" min="0" max="100" value="50" id="volume-slider" name="volume-slider">
+                </div>
+                <div>
+                    <h3>Sound: </h3>
+                    <div class="mid">
+                        <label class="rocker">
+                        <input id="sound-toggle" type="checkbox" checked>
+                        <span class="switch-left">On</span>
+                        <span class="switch-right">Off</span>
+                        </label>
+                  </div>
+                </div>
+            </div>
         </div>
-        <div class="info-holder">
-            <span id="timer"></span>
-        </div>
-        <div id="sound-controls" class="info-holder">
-            <button class="sound-button"><i class="fas fa-volume-up"></i></button>
-        </div>
-    </div>
+    </section>
 
-    
-    
+    <!--The game-->
+    <section>
+        <h1>Animal Pairs</h1>
+
+        <!--Rules and Difficulty buttons-->
+        <div id="game-data">
+            <div id="rules-holder" class="">
+            <button id="rules-button" class="gamebtn">Rules</button>
+            </div>
+            <div id="difficulty-dropdown" class="dropdown">
+                <button class="gamebtn">Difficulty</button>
+                <div class="dropdown-content">
+                    <button clicked = true class="diff-btn" id="diff-easy">Easy</button>
+                    <button clicked = true class="diff-btn" id="diff-medium">Medium</button>
+                    <button clicked = true class="diff-btn" id="diff-hard">Hard</button>
+                </div>
+            </div>
+        </div>
+
+        <!--Score, timer display and sound button-->
+        <div id="deck-info-holder" class="">
+            <div class="info-holder">
+                <span id="score"></span>
+            </div>
+            <div class="info-holder">
+                <span id="timer"></span>
+            </div>
+            <div id="sound-controls" class="info-holder">
+                <button class="sound-button"><i class="fas fa-volume-up"></i></button>
+            </div>
+        </div>
+
+        <!--Deck-->
         <div id="game-holder">
-
             <ul id="deck" class="deck narrow">
-                    <li class="card"><img src="assets/images/cow.jpg"></li>
-                    <li class="card"><img src="assets/images/dolphin.jpg"></li>
-                    <li class="card"><img src="assets/images/eagle.jpg"></li>
-                    <li class="card"><img src="assets/images/snake.jpg"></li>
-                    <li class="card"><img src="assets/images/kingfisher.jpg"></li>
-                    <li class="card"><img src="assets/images/polarBear.jpg"></li>
-                    <li class="card"><img src="assets/images/tiger.jpg"></li>
-                    <li class="card"><img src="assets/images/zebra.jpg"></li>
-                    <li class="card"><img src="assets/images/cow.jpg"></li>
-                    <li class="card"><img src="assets/images/baboon.jpg"></li>
-                    <li class="card"><img src="assets/images/eagle.jpg"></li>
-                    <li class="card"><img src="assets/images/snake.jpg"></li>
+                <li class="card"><img src="assets/images/cow.jpg"></li>
+                <li class="card"><img src="assets/images/dolphin.jpg"></li>
+                <li class="card"><img src="assets/images/eagle.jpg"></li>
+                <li class="card"><img src="assets/images/snake.jpg"></li>
+                <li class="card"><img src="assets/images/kingfisher.jpg"></li>
+                <li class="card"><img src="assets/images/polarBear.jpg"></li>
+                <li class="card"><img src="assets/images/tiger.jpg"></li>
+                <li class="card"><img src="assets/images/zebra.jpg"></li>
+                <li class="card"><img src="assets/images/cow.jpg"></li>
+                <li class="card"><img src="assets/images/baboon.jpg"></li>
+                <li class="card"><img src="assets/images/eagle.jpg"></li>
+                <li class="card"><img src="assets/images/snake.jpg"></li>
             </ul>
-
+            <!--Reset button-->
             <div>
                 <button id="reset-game"><i class="fas fa-undo"></i></button>
             </div>
         </div>
+    </section>
 
-    <footer>
-        <span id="social-media">
+    <!--Footer-->
+    <section>
+        <footer>
+            <span id="social-media">
             <a href="https://github.com/EwanColquhoun/AnimalPairs" target="_blank" rel="noopener" aria-label="Visit my Github page (opens in a new tab)"><i class="fab fa-github socials"></i></a>
             <a href="https://www.linkedin.com/in/ewan-colquhoun-2b3535213/" target="_blank" rel="noopener" aria-label="Visit my LinkedIn page (opens in a new tab)"><i class="fab fa-linkedin-in socials"></i></a></span>
-        <p>Copyright 2021 Ewan Colquhoun</p>
-    </footer>
+            <p>Copyright 2021 Ewan Colquhoun</p>
+        </footer>
+    </section>
 
+    <!--Font Awesome and Script links-->
     <script src="https://kit.fontawesome.com/48b20a3378.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/audio.js"></script>
