@@ -290,6 +290,7 @@ h1 {
   width: 125px;
   margin: 1.2rem 0.2rem;
   background-image: url('/AnimalPairs/assets/images/birdie.png');
+  background-image: url('/assets/images/birdie.png');
   background-position: center center;
   background-size: contain;
   background-color: antiquewhite;
@@ -626,7 +627,7 @@ footer {
   #welcome-modal {
     width: 100%;
     line-height: initial;
-    height: 545px;
+    height: 520px;
   }
 
   #welcome-sound-button {
@@ -635,5 +636,10 @@ footer {
 
   #rules-button, #difficulty-dropdown button {
     font-size: smaller;
+  }
+
+  .close-modal {
+    width: 90px;
+    height: 40px;
   }
 }

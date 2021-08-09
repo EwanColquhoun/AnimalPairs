@@ -1,4 +1,4 @@
-# *Animal Pairs (WORK IN PROGRESS)*
+# *Animal Pairs*
 An interactive website to help improve the user's memory skills. It is a basic memory game involving matching up pairs of animal images. It is aimed at an age of 3 upwards. 
 
 # Contents
@@ -190,6 +190,6 @@ The method from cloning a project from GitHub is below:
     * The favicon came from [FreeFavIcon](https://www.freefavicon.com/freefavicons/animal/index.php).
 
 # Acknowledgements
-The site was completed as a Portfolio 2 Project piece for the Full Stack Software Developer (e-Commerce) Diploma at the [Code Institute](https://codeinstitute.net/). As such I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/), the Slack community, and all at the Code Institute for their help and support.
+Animal Pairs was completed as a Portfolio 2 Project piece for the Full Stack Software Developer (e-Commerce) Diploma at the [Code Institute](https://codeinstitute.net/). As such I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/), the Slack community, and all at the Code Institute for their help and support.
 
 Ewan Colquhoun 2021.
