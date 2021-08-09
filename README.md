@@ -1,5 +1,9 @@
 # *Animal Pairs*
-An interactive website to help improve the user's memory skills. It is a basic memory game involving matching up pairs of animal images. It is aimed at an age of 3 upwards. 
+An interactive website to help improve the user's memory skills. It is a basic memory game involving matching up pairs of animal images. It is aimed at users who want a bit of fun and want to test their memory. Aimed at ages 3 and upwards.
+
+Click [**HERE**](https://ewancolquhoun.github.io/AnimalPairs/) to test your memory with Animal Pairs! 
+
+![Responsive design image](assets/readme-images/responsive-design.png)
 
 # Contents
 * [**User Experience UX**](<#user-experience-ux>)
@@ -52,11 +56,10 @@ There is a reset button at the bottom of the deck of cards.
     * The main heading is 'Fredericka the Great' in the cursive style. This helps the user get an idea as to what the game is about. It is relaxed yet descriptive.
     * The font for the rest of the site is 'Exo' in the san-serif style. It appears informal yet easy to read at all sizes and weights.
 
-[Back to top](<#contents>)
 * ### Colour Scheme
     * The colour schemes chosen for Animal Pairs were primarily chosen to capture the user's eye and imagination. They are bright and vibrant colours to enhance the experience without detracting from the game itself.
 
-Here are some examples of the colours:
+Here are some examples of the colour palattes:
 * Main background
 ![Background-Color](assets/readme-images/background-color.png)
 * Welcome pop-up
@@ -175,10 +178,12 @@ The method from cloning a project from GitHub is below:
 5. Type **git clone**, and then paste the URL copied from GitHub.
 6. Press **enter** and the local clone will be created.
 
+[Back to top](<#contents>)
 # Credits
 * ## Content
     * The font came from [Google Fonts](https://fonts.google.com/).
     * The colour palate was compiled by [Colormind](http://colormind.io/).
+    * The colour gradients were compiled from [ColourSpace](https://mycolor.space/).
     * The icons came from [Font Awesome](https://fontawesome.com/).
     * [Balsamiq](https://balsamiq.com/wireframes/) was used to create the wireframes.
     * The framework for the timer came from [Daniel Hug](https://jsfiddle.net/Daniel_Hug/pvk6p/).
@@ -189,7 +194,10 @@ The method from cloning a project from GitHub is below:
     * The animal images were from [Unsplash](https://unsplash.com/).
     * The favicon came from [FreeFavIcon](https://www.freefavicon.com/freefavicons/animal/index.php).
 
+[Back to top](<#contents>)
 # Acknowledgements
 Animal Pairs was completed as a Portfolio 2 Project piece for the Full Stack Software Developer (e-Commerce) Diploma at the [Code Institute](https://codeinstitute.net/). As such I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/), the Slack community, and all at the Code Institute for their help and support.
 
 Ewan Colquhoun 2021.
+
+[Back to top](<#contents>)
