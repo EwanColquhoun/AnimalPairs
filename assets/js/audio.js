@@ -40,7 +40,7 @@ function deckShufflePlay() {
  * It will still play a generic sound instead of the targeted animal sounds. 
  * */
 function backUpAnimalAudio (){
-    let alternativeAnimal = new Audio('assets/audio/altAnimal.mp3')
+    let alternativeAnimal = new Audio('assets/audio/altAnimal.mp3');
     if (soundMute === true) {
         return;
     } else {

@@ -155,7 +155,7 @@ Here are some examples of the colour palattes:
 [Back to top](<#contents>)
 # Testing
 
-Please refer to [**_here_**](TESTING.md) for more information on testing Wawas Woods.
+Please refer to [**_here_**](TESTING.md) for more information on testing Animal Pairs.
 
 [Back to top](<#contents>)
 

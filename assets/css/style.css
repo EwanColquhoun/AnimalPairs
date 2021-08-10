@@ -89,10 +89,9 @@ html, body {
   z-index: 5;
   background-image: radial-gradient(circle, #f52179, #f7318d, #f840a0, #f74eb3, #f45cc6);
   background-color: #f52179e6;
-  transition: 1.0s;
   border-radius: 50px;
   animation: rotateIn;
-  animation-duration: 1s;
+  animation-duration: 2s;
 }
 
 #congrats-div {
