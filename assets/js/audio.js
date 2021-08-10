@@ -36,7 +36,9 @@ function deckShufflePlay() {
     }
 }
 
-/**Functions acts as a fallback incase getting the correct animal name fails. It will still play a generic sound instead of the targeted animal sounds. */
+/**Functions acts as a fallback incase getting the correct animal name fails. 
+ * It will still play a generic sound instead of the targeted animal sounds. 
+ * */
 function backUpAnimalAudio (){
     let alternativeAnimal = new Audio('assets/audio/altAnimal.mp3')
     if (soundMute === true) {
@@ -50,7 +52,7 @@ function backUpAnimalAudio (){
 /**Gets the asset 'click2', checks to see if mute is true, if so, return with no sound.
  * If mute is false, resets the sound track, adjusts volume based on the volumeSlider setting
  * then plays sound.
- */
+ * */
 function cardTurnOver () {
     const cardClick = new Audio('assets/audio/click2.mp3');
     if (soundMute === true) {
@@ -65,7 +67,7 @@ function cardTurnOver () {
 /**Gets the asset 'wrong-match', checks to see if mute is true, if so, return with no sound.
  * If mute is false, resets the sound track, adjusts volume based on the volumeSlider setting
  * then plays sound.
- */
+ * */
 function wrongMatch () {
     const wrongCard = new Audio('assets/audio/wrong-match.mp3');
     if (soundMute === true) {
@@ -77,8 +79,22 @@ function wrongMatch () {
     }
 }
 
-/**Function adjusts volumeSlider setting to 0 if sound mute is toggled
- */
+/**Plays a congratulations sound when the game is completed. 
+ * 
+*/
+function congratsSound () {
+    const congratsAudio = new Audio('assets/audio/congrats.mp3');
+    if (soundMute === true) {
+        return;
+    } else {
+        congratsAudio.volume = volumeSlider.value / 100;
+        congratsAudio.play();
+    }
+}
+
+/**Function adjusts volumeSlider setting to 0 if sound mute is toggled.
+ * 
+*/
 function audioMute() {
     if (soundMute === false) {
         soundMute = true;

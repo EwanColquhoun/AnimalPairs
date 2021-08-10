@@ -121,6 +121,7 @@ function stopGame() {
         stopTimer();
         congratsMessage();
         changeScoreText();
+        setTimeout("congratsSound()", 1000);
     }
 }
 
