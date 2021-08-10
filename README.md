@@ -1,7 +1,7 @@
 # *Animal Pairs*
 An interactive website to help improve the user's memory skills. It is a basic memory game involving matching up pairs of animal images. It is aimed at users who want a bit of fun and want to test their memory. Aimed at ages 3 and upwards.
 
-Click [**HERE**](https://ewancolquhoun.github.io/AnimalPairs/) to test your memory with Animal Pairs! 
+Click [*HERE*](https://ewancolquhoun.github.io/AnimalPairs/) to test your memory with Animal Pairs! 
 
 ![Responsive design image](assets/readme-images/responsive-design.png)
 
@@ -11,10 +11,17 @@ Click [**HERE**](https://ewancolquhoun.github.io/AnimalPairs/) to test your memo
     * [Wireframes](<#wireframes>)
     * [Site Structure](<#site-structure>)
     * [Design Choices](<#design-choices>)
-    *  [Typography](<#typography>)
-    *  [Colour Scheme](<#colour-scheme>)
+        *  [Typography](<#typography>)
+        *  [Colour Scheme](<#colour-scheme>)
 * [**Features**](<#features>)
     * [**Existing Features**](<#existing-features>)
+        * [Welcome pop-up](<#welcome-pop-up>)
+        * [Rules and Difficulty buttons](<#rules-and-difficulty-buttons>)
+        * [Score and Timer](<#score-and-timer>)
+        * [Sound Controls](<#sound-controls>)
+        * [Sound Menu](<#the-sound-menu>)
+        * [The Game](<#the-game>)
+        * [Congratulations pop-up](<#congratulations-pop-up>)
     * [**Future Features**](<#future-features>)
 * [**Technologies Used**](<#technologies-used>)
 * [**Testing**](<#testing>)
@@ -46,7 +53,7 @@ On opening the site you are greeted with the Welcome pop-up that describes the r
 
 The sound menu pop-up can be accessed at any time via the volume icon, it has a volume slider and a mute toggle switch.<br>
 
-The congratulations pop-up is displayed when the user has completed the game. It shows the score, time taken and gives the user the option to start again at a difficulty of their choosing. 
+The Congratulations pop-up is displayed when the user has completed the game. It shows the score, time taken and gives the user the option to start again at a difficulty of their choosing. 
 
 There is a reset button at the bottom of the deck of cards.
 
@@ -73,12 +80,12 @@ Here are some examples of the colour palattes:
 * ### Welcome pop-up
     * Designed to give the user an introduction to the site and to explain the rules of the game.
     * It has 3 difficulty selector buttons and one sound control button to open the sound controls pop-up.
-    * To close the Welcome pop-up the user needs to click anywhere on the screen.
+    * To close the Welcome pop-up the user can click anywhere on the screen.
 
 ![Welcome modal](assets/readme-images/welcome-modal.png)
 
 [Back to top](<#contents>)
-* ### Rules and Difficulty selector buttons
+* ### Rules and Difficulty buttons
     * The Rules and Difficulty buttons are located above the game on the main page.
     * The Rules button allows access to the Welcome pop-up and thus the rules of the game at any stage. 
     * The Difficulty drop down buttons allow the user the vary the level of difficulty. When the desired difficulty is selected the game resets.
@@ -104,7 +111,7 @@ Here are some examples of the colour palattes:
 ![The sound buttons](assets/readme-images/soundbutton2.png)
 
 [Back to top](<#contents>)
-* ### The Sound controls pop-up
+* ### The Sound menu
     * Accessed by the sound controls buttons it allows the user to change the game sound effects volume at any stage. 
     * It also has a mute function.
     * To exit the sound controls the user needs to click off the sound controls panel.
@@ -132,8 +139,9 @@ Here are some examples of the colour palattes:
 
 [Back to top](<#contents>)
 ## Future Features
-* An item for further development would be a score board for the various users once a player name has been inputted.
+* An item for further versions could be a score board for the various users once a player name has been inputted.
 
+[Back to top](<#contents>)
 # Technologies Used
 * [HTML5](https://html.spec.whatwg.org/) - provides the content and structure for the website.
 * [CSS](https://www.w3.org/Style/CSS/Overview.en.html) - provides the styling.
@@ -143,6 +151,7 @@ Here are some examples of the colour palattes:
 * [Github](https://github.com/) - used to host and edit the website.
 * [AnimateCss](https://animate.style/) - Library used to help with the animations on all devices.
 
+[Back to top](<#contents>)
 # Testing
 
 Please refer to [**_here_**](TESTING.md) for more information on testing Wawas Woods.
@@ -154,8 +163,8 @@ Please refer to [**_here_**](TESTING.md) for more information on testing Wawas W
 The site was deployed to GitHub pages. The steps to deploy a site are as follows:
   1. In the GitHub repository, navigate to the **Settings** tab.
   2. Once in Settings, navigate to the **Pages** tab on the left hand side.
-  3. Under **Source**, select the branch to **master**, then click **save**.
-  4. Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+  3. Under **Source**, select the branch to **master** or **main**, then click **save**.
+  4. Once the master branch has been selected, the page will be automatically refreshed with a green ribbon display to indicate the successful deployment.
 
 ![GitHub pages deployed image](assets/readme-images/deploy2.png)
 
@@ -187,6 +196,8 @@ The method from cloning a project from GitHub is below:
     * The icons came from [Font Awesome](https://fontawesome.com/).
     * [Balsamiq](https://balsamiq.com/wireframes/) was used to create the wireframes.
     * The framework for the timer came from [Daniel Hug](https://jsfiddle.net/Daniel_Hug/pvk6p/).
+    * The code for the dropdown buttons was inspired by [W3Schools](https://www.w3schools.com/css/css_dropdowns.asp).
+    * The code for the sound toggle was inspired by [Marcus Connor](https://codepen.io/marcusconnor/pen/QJNvMa ).
 
 * ## Media
     * The animal sound effects were from [Free Sound Effects](https://www.freesoundeffects.com).

@@ -41,15 +41,25 @@ Google Chrome, Microsoft Edge, Safari and Mozilla Firefox. Appearance, functiona
     
     <br>
 * As a user I want to know when I have finished.
-    * When all the cards are matched the **Congratulations** pop-up is displayed. Above the 'deck' there is also a tally of the pairs found and the maximum amount of pairs available.
+    * When all the cards are matched the **Congratulations** pop-up is displayed. 
+    * Above the 'deck' there is also a tally of the pairs found and the maximum amount of pairs available.
     
     <br>
 * As a user I want to reset the game if I want another attempt.
-    * There are many ways to reset the game. The **reset button** at the bottom of the 'deck'. The difficulty buttons on the main page or the through the 'Rules' button and the Welcome pop-up.
+    * There are many ways to reset the game. The **reset button** at the bottom of the 'deck'. The **difficulty buttons** on the main page or the through the '**Rules**' button and the Welcome pop-up.
     
     <br>
 * As a user I want to make the game easier or harder to suit my skill level.
     * The level of challenged in this game is determined by the amount of cards in the 'deck'. This can be changed using the **'Difficulty'** dropdown menu. The 'deck' size varies between 12 cards (on easy) to 20 cards (on hard).
+
+## Known Bugs
+* ### Resolved
+    * The audioMute function didn't mute the playAnimalSounds function. This was due to an oversight and was picked up during the testing process. It was easily resolved with more code that read the status of the soundMute variable.
+
+* ### Unresolved
+    * When the page is loaded in the IDE (GitPod in this case) the asset for the background doesn't load. It loads on every other device/browser. This is a bug that I have not experienced before and at the time of writing I am still looking into it. At first glance it doesn't appear to affect the deployed site.
+
+![Unresolved bug](assets/readme-images/birdie-bug.png)
 
 ## Additional Testing
 ### Lighthouse
@@ -59,10 +69,10 @@ The site was also tested using [Google Lighthouse](https://developers.google.com
 * Best Practices - Site conforms to industry best practices.
 * SEO - Search engine optimisation. Is the site optimised for search engine result rankings.
 
-As an example the results for Wawas Woods home page are below:
+Here are the results from the Animal Pairs test. 
 ![Lighthouse test results](assets/readme-images/testing.png)
 
-This part of the testing process showed up that the site was slow to load, mainly due to the image sizes. All the images needed to be compressed before adding to the repository. Once this was done the performance went from ~60% to ~90%. 
+This part of the testing process showed up that the site was slow to load. All the images were compressed and the 'prefectch' function was added to the link elements in the head of the INDEX.page. This sped up the loading time and increased the performance rating.
 
 ### Peer review
 In addition to the above testing the beta version of the site was put through its paces by peers, both in the software development field and outside. Animal Pairs has also been tested by a 3 year old who managed to navigate the cards and grasp the concept of the game without much guidance.
