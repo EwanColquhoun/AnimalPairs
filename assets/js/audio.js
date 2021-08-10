@@ -22,7 +22,7 @@ function deckShufflePlay() {
  * a specific letter that corresponds to the type of animal eg L = Lion. This ensures that the correct 
  * animal sound is played for specific animal matches. Again checks volume and plays sound. 
  */
-function playAnimalSounds (animalName){
+ function playAnimalSounds (animalName){
     let animalAudio = new Audio(`assets/audio/${animalName}.mp3`);
     setTimeout(function(){
         animalAudio.pause();
@@ -33,6 +33,17 @@ function playAnimalSounds (animalName){
         animalAudio.currentTime = 0;
         animalAudio.volume = volumeSlider.value / 100;
         animalAudio.play();
+    }
+}
+
+/**Functions acts as a fallback incase getting the correct animal name fails. It will still play a generic sound instead of the targeted animal sounds. */
+function backUpAnimalAudio (){
+    let alternativeAnimal = new Audio('assets/audio/altAnimal.mp3')
+    if (soundMute === true) {
+        return;
+    } else {
+        alternativeAnimal.volume = volumeSlider.value /100;
+        alternativeAnimal.play();
     }
 }
 

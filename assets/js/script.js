@@ -290,7 +290,11 @@ function showHard(){
 function checkDataMatch(cardsNum){
     if(match){
         animalName = cardsNum.charAt(24);
-        playAnimalSounds(animalName);
+        if (animalName === 'b' || animalName === 'c' || animalName === 'd' || animalName === 'e' || animalName === 'k' || animalName === 'l' || animalName === 'p' || animalName === 's' || animalName === 't' || animalName === 'z'){
+            playAnimalSounds(animalName);
+        } else {
+            backUpAnimalAudio();
+        }
     } else {
         return;
     }

@@ -150,6 +150,7 @@ Here are some examples of the colour palattes:
 * [Gitpod](https://www.gitpod.io/#get-started) - used to deploy the website.
 * [Github](https://github.com/) - used to host and edit the website.
 * [AnimateCss](https://animate.style/) - Library used to help with the animations on all devices.
+* [CloudConvert](https://cloudconvert.com/wav-to-mp3) - Used to convert WAV files to mp3.
 
 [Back to top](<#contents>)
 # Testing
