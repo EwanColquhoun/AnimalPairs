@@ -27,8 +27,13 @@ function playAnimalSounds (animalName){
     setTimeout(function(){
         animalAudio.pause();
     },2000);
-    animalAudio.volume = volumeSlider.value / 100;
-    animalAudio.play();
+    if (soundMute === true) {
+        return;
+    } else {
+        animalAudio.currentTime = 0;
+        animalAudio.volume = volumeSlider.value / 100;
+        animalAudio.play();
+    }
 }
 
 /**Gets the asset 'click2', checks to see if mute is true, if so, return with no sound.
