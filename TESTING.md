@@ -10,7 +10,7 @@ The CSS validator results are below:
 
 ![CSS Validator test result](assets/readme-images/csstesting.png)
 
-The JSHint validator results showed that there were a number of minor errors such as missing semi-colons. It also flagged up that one of the variables had been defined twice. 
+The JSHint validator results showed that there were a number of minor errors such as missing semi-colons. It also flagged up that one of the variables had been defined twice. These were easily corrected and subsequent passes through JSHint revealed no major flaws.
 
 ## Responsiveness Test
 
@@ -55,6 +55,10 @@ Google Chrome, Microsoft Edge, Safari and Mozilla Firefox. Appearance, functiona
 ## Known Bugs
 * ### Resolved
     * The audioMute function didn't mute the playAnimalSounds function. This was due to an oversight and was picked up during the testing process. It was easily resolved with more code that read the status of the soundMute variable.
+
+    * When the playAnimalSound function was first called it resulted in the sound effect playing in full. To get around this a timeout was added to pause the sound effect after a set period of time. 
+
+    * There were some bugs with the modal sizes when viewed on older iPhones. This required an additional media query once the modals were resized. 
 
 * ### Unresolved
     * When the page is loaded in the IDE (GitPod in this case) the asset for the background doesn't load. It loads on every other device/browser. This is a bug that I have not experienced before and at the time of writing I am still looking into it. At first glance it doesn't appear to affect the deployed site.
