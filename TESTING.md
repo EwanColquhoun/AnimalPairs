@@ -56,7 +56,8 @@ Google Chrome, Microsoft Edge, Safari and Mozilla Firefox. Appearance, functiona
 * ### Resolved
     * The audioMute function didn't mute the playAnimalSounds function. This was due to an oversight and was picked up during the testing process. It was easily resolved with more code that read the status of the soundMute variable.
 
-    * When the playAnimalSound function was first called it resulted in the sound effect playing in full. To get around this a timeout was added to pause the sound effect after a set period of time. 
+    * When the playAnimalSound function was first called it resulted in the sound effect playing in full. To get around this a timeout was added to pause the sound effect after a set period of time.
+![Animal Sounds function](assets/readme-images/playAnimalSounds.png)   
 
     * There were some bugs with the modal sizes when viewed on older iPhones. This required an additional media query once the modals were resized. 
 
