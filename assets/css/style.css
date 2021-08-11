@@ -6,6 +6,7 @@
     border: none; 
  }
 
+/* Sets the initial styling for the page */
 html, body {
     background-image: linear-gradient(to bottom, #45a4f3, #4bb5f0, #66c5ea, #88d2e5, #abdee3, #addadb, #b0d7d4, #b2d3ce, #95c0ba, #77aea7, #589b94, #368981);
     background-color: #D9ECE9;
@@ -320,7 +321,7 @@ h1 {
 display: none;
 }
 
-/*sound toggle switch*/
+/* Sound toggle switch */
 .mid {
   display: flex;
   align-items: center;
@@ -525,6 +526,7 @@ input:checked:focus + .switch-left + .switch-right {
   animation-delay: 200ms;
 }
 
+/* Timer flash effects */
 .flash {
   color: #FFC745;
   background-color: #005453;

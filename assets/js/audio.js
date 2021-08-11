@@ -2,8 +2,7 @@
 let volumeSlider = document.getElementById("volume-slider");
 let soundMute = false;
 let lastVolume = 0;
-const AudioContext = window.AudioContext || window.webkitAudioContext;
-const audioCtx = new AudioContext();
+
 /**Gets the asset 'shuffle', checks to see if mute is true, if so, return with no sound.
  * If mute is false, resets the sound track, adjusts volume based on the volumeSlider setting
  * then plays sound.

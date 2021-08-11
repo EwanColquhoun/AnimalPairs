@@ -19,9 +19,10 @@ let moves = 0;
 var animalName;
 
 //Timer variables
-var timerSpan = document.getElementById("timer"),
-    seconds = 0, minutes = 0,
-    t;
+var timerSpan = document.getElementById("timer");
+var seconds = 0;
+var minutes = 0;
+var t;
 
 //Adds event listeners for the difficulty buttons and the reset button. 
 for (let i = 0; i < diffButtons.length; i++) {
@@ -34,7 +35,6 @@ const resetBtn = document.getElementById("reset-game").addEventListener('click',
  * eg Easy = closes modal then play the game on easy.
   */
 function welcomeMessage() {
-    
     document.querySelector("#welcome-modal-box").addEventListener('click', function(){
         document.getElementById('welcome-modal-box').style.display = 'none';
     });
